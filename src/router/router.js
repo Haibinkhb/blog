@@ -26,7 +26,7 @@ export default new VueRouter({
             component: About
         },
         {
-            path: '/ES6',
+            path: '/log/:id',
             component: Log
         }
     ]

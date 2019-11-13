@@ -1,6 +1,6 @@
 <template>
   <div class="content">
-    i am log
+    {{this.$route.params}}
   </div>
 </template>
 
