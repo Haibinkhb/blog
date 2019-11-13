@@ -1,10 +1,18 @@
 <template>
   <div class="header">
-    <div class="logo">Blog</div>
+    <div class="logo">logo</div>
     <div class="nav">
       <ul class="nav-list">
-        <li @click="handleSelect(index)" v-for="(nav,index) in navList" :key="index">
-          <a href="#" :class="[currentIndex === index ? 'active' : '']" >{{nav}}</a>
+        <li
+          @click="handleSelect(index)"
+          v-for="(nav, index) in navList"
+          :key="index"
+        >
+          <router-link
+            :to="{name:nav}"
+            :class="[currentIndex === index ? 'active' : '']"
+            >{{ nav }}</router-link
+          >
         </li>
       </ul>
     </div>
@@ -15,18 +23,15 @@
 export default {
   data() {
     return {
-        navList:['Home','About'],
-        currentIndex:0
+      navList: ["home", "about"],
+      currentIndex: 0
     };
   },
-  computed: {
-    // isActive() {
-    //   return this.navList[activated]
-    // }
-  },
+
+  computed: {},
   methods: {
     handleSelect(index) {
-      this.currentIndex = index
+      this.currentIndex = index;
     }
   }
 };
@@ -40,7 +45,6 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  border-bottom: solid 1px #ccc;
 }
 .logo {
   flex: 1;
@@ -71,16 +75,16 @@ export default {
 }
 .nav-list li a {
   text-decoration: none;
-  color: #ccc;
+  color: #2c3e50;
   display: block;
   height: 100%;
 }
-.nav-list li .active{
-    color: red;
-    border-bottom: 2px solid red;
+.nav-list li .active {
+  color: #2c3e50;
+  border-bottom: 2px solid #42b983;
 }
 .nav-list li a:hover {
-  color: red;
-  border-bottom: 2px solid red;
+  color: #2c3e50;
+  border-bottom: 2px solid #42b983;
 }
 </style>

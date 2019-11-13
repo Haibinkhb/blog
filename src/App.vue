@@ -1,16 +1,18 @@
 <template>
   <div id="app">
-   <Home />
+   <Header  class="header"/>
+   <Content class="content" />
   </div>
 </template>
 
 <script>
-import Home from './components/Home/Home.vue'
-
+import Header from './components/Header.vue'
+import Content from './components/content/Content.vue'
 export default {
   name: 'app',
   components: {
-    Home
+    Header,
+    Content
   }
 }
 </script>
@@ -20,5 +22,9 @@ export default {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
 }
 </style>
