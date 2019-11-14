@@ -14,10 +14,11 @@
 
 <script>
 import LogList from "./LogList.vue";
+import test from './../../../../public/blogJson/test.json'
 export default {
   data() {
     return {
-      logList: [{id:'es6', title: "你不知道的JavaScript" }, {id:'es7', title: "防抖节流实现" }]
+      logList: [test,test]
     };
   },
   components: {

@@ -1,6 +1,6 @@
 <template>
   <div class="content">
-    {{this.$route.params}}
+    
   </div>
 </template>
 
