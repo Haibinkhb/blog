@@ -1,11 +1,25 @@
 <template>
-  <div class="content">
-    
+  <div class="content" v-html="log.body">
+
   </div>
 </template>
 
 <script>
-export default {};
+import blogs from './../../../../public/blogJson/blog.json'
+export default {
+  data(){
+    return {
+      blogs
+    }
+  },
+  computed: {
+    log(){
+      return this.blogs.find(item =>{
+         return item.id === this.$route.params.id
+      })
+    }
+  }
+};
 </script>
 
 <style scoped>

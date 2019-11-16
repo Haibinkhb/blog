@@ -6,9 +6,6 @@
       <span>字数统计</span>
       <span>标签{{log.layout}}</span>
     </div>
-    <div v-html="log.body">
-       
-    </div>
   </div>
 </template>
 
@@ -16,10 +13,12 @@
 
 export default {
   props: { log: Object },
-
+  created(){
+    console.log(this.params);
+  },
   data() {
     return {
-      params: this.$route.params,
+      params: this.log,
     };
   },
   components: {

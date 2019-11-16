@@ -3,10 +3,9 @@
     <router-link 
     tag="div" 
     :to="`/log/${log.id}`" 
-    v-for="(log, index) in logList" 
+    v-for="(log, index) in blogs" 
     :key="index"
     >
-    
       <LogList :log="log"></LogList>
     </router-link>
   </div>
@@ -14,11 +13,11 @@
 
 <script>
 import LogList from "./LogList.vue";
-import test from './../../../../public/blogJson/test.json'
+import blogs from './../../../../public/blogJson/blog.json'
 export default {
   data() {
     return {
-      logList: [test,test]
+      blogs
     };
   },
   components: {
