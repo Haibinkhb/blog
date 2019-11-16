@@ -53,7 +53,7 @@ checkscope()();
 
 ```js
 //例2
-var a= 1;
+var a = 1;
 function f1() {
     f2()
 }
@@ -66,13 +66,13 @@ f1();
 
 这段代码会输出 undefined 。
 
-为什么呢？
-
 这是因为JavaScript引擎对JavaScript代码进行执行之前,需要进行预先处理,然后再执行处理后的代码。
 
 也就是说JavaScript在浏览器中运行的过程分为两个阶段：**“预解析”（准备工作）** 和 **执行阶段** 。
 
 #### **“预解析”**
+
+***
 
 ##### 可执行代码块
 
@@ -130,7 +130,7 @@ ECStack.pop();
 // javascript接着执行下面的代码，但是ECStack底层永远有个globalContext，直到程序结束。
 ```
 
-##### 变量对象
+#### 变量对象
 
 前面讲到当JavaScript执行一段可执行代码时会创建对应的执行上下文。对于每个执行上下文都有三个重要属性：
 
@@ -142,14 +142,14 @@ ECStack.pop();
 
 先来看变量对象：
 
-变量对象(variableObject)是与执行上下文相关的数据作用域,一个与上下文相关的特殊对象，其中存储了在上下文中定义的变量和函数声明和函数的形参（函数上下文才有）*
+变量对象(variableObject)是与执行上下文相关的数据作用域,一个与上下文相关的特殊对象，其中存储了在上下文中定义的变量和函数声明和函数的形参（函数上下文才有）
 
 不同的可执行代码创建的执行上下文下的变量对象会稍有不同：
 
 * 全局上下文中的变量对象就是全局对象，在客户端 JavaScript 中，全局对象就是Window 对象。
 
 * > 在函数上下文中，我们用活动对象(activation object, AO)来表示变量对象。活动对象和变量对象其实是一个东西，只是变量对象是规范上的或者说是引擎实现上的，不可在 JavaScript 环境中访问，只有到当进入一个执行上下文中，这个执行上下文的变量对象才会被激活，所以才叫 activation object 呐，而只有被激活的变量对象，也就是活动对象上的各种属性才能被访问。活动对象是在进入函数上下文时刻被创建的，它通过函数的 arguments 属性初始化。arguments 属性值是 Arguments 对象。
-《[JavaScript深入之变量对象]([JavaScript深入之变量对象](https://github.com/mqyqingfeng/Blog/issues/5) )》
+《[JavaScript深入之变量对象](https://github.com/mqyqingfeng/Blog/issues/5) )》
 
 我们用一段伪代码表示创立的执行上下文：
 
@@ -218,7 +218,7 @@ arguments: {
 3. 在进入执行上下文时会给变量对象添加形参、函数声明、变量声明等初始的属性值
 4. 在代码执行阶段，会再次修改变量对象的属性值
 
-##### 作用域链
+#### 作用域链
 
 再来看执行上下文的另一个重要属性：作用域链。
 
@@ -229,7 +229,7 @@ arguments: {
 
 前面讲到函数的作用域在函数定义的时候就已经确定了。
 
-这是因为函数内部有一个属性\[\[scope\]\],当当函数创建的时候，就会保存所有父变量对象到其中。
+这是因为函数内部有一个属性\[\[scope\]\],当函数创建的时候，就会保存所有父变量对象到其中。
 
 ```js
 function foo() {
@@ -298,7 +298,7 @@ checkscopeContext = {
 }
 ```
 
-然后用 arguments 创建活动对象，随后初始化活动对象，加入形参、函数声明、变量声明：
+第二步：用 arguments 创建活动对象，随后初始化活动对象，加入形参、函数声明、变量声明：
 
 ```js
 checkscopeContext = {
@@ -312,7 +312,7 @@ checkscopeContext = {
 }
 ```
 
-将活动对象压入 checkscope 作用域链顶端:
+第三步：将活动对象压入 checkscope 作用域链顶端:
 
 ```js
 checkscopeContext = {
@@ -348,3 +348,15 @@ ECStack = [
     globalContext
 ];
 ```
+
+***
+
+参考：
+
+* [JavaScript深入之词法作用域和动态作用域](https://github.com/mqyqingfeng/Blog/issues/3)
+* [JavaScript深入之执行上下文栈](https://github.com/mqyqingfeng/Blog/issues/4)
+* [JavaScript深入之变量对象](https://github.com/mqyqingfeng/Blog/issues/5)
+* [JavaScript深入之作用域链](https://github.com/mqyqingfeng/Blog/issues/6)
+* [JavaScript的『预解释』与『变量提升』](http://www.cxymsg.com/guide/hoisting.html#%E5%89%8D%E8%A8%80)
+
+说明：本文大量参考各位大佬博客，本人出于复习和总结知识点的目的加入些许个人理解，如有冒犯，敬请谅解。
