@@ -1,9 +1,3 @@
----
-id: scope
-title: JavaScript作用域
-tag: JavaScript
----
-
 #### 作用域
 
 ***

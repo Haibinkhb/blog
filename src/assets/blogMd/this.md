@@ -1,9 +1,3 @@
----
-id: this
-title: this&闭包
-tag: JavaScript
----
-
 #### this
 
 ***

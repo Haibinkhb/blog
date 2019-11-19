@@ -13,7 +13,7 @@
 
 <script>
 import LogList from "./LogList.vue";
-import blogs from './../../../../public/blogJson/blog.json'
+import blogs from "./../../../assets/blog.json";
 export default {
   data() {
     return {

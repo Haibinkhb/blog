@@ -1,9 +1,3 @@
----
-id: prototype
-title: JavaScript原型和原型链
-tag: JavaScript
----
-
 #### 原型
 
 ***
