@@ -1,10 +1,10 @@
 <template>
   <div class="content">
-    <div class="title">{{ log.title }}</div>
+    <h3 class="title">{{ log.title }}</h3>
     <div class="logInfo">
-      <span>发表于{{log.updatedAt}}</span>
-      <span>字数统计</span>
-      <span>标签{{log.layout}}</span>
+      <span>发表于：{{log.updatedAt}}</span>
+      <span>字数统计：{{log.wordcount}}</span>
+      <span>标签：{{log.tag}}</span>
     </div>
   </div>
 </template>
@@ -13,35 +13,31 @@
 
 export default {
   props: { log: Object },
-  created(){
-    console.log(this.params);
-  },
   data() {
     return {
       params: this.log,
     };
-  },
-  components: {
-    // Log
   }
 };
 </script>
 
 <style scoped>
 .content {
-  background-color: orange;
+  background-color: fff;
   display: flex;
   flex-direction: column;
-  width: 85%;
-  height: 20rem;
+  width: 80%;
   margin: 2rem auto;
   box-shadow: 0px 0px 10px #ccc;
   border-radius: 0.5rem;
-  padding: 2rem 1rem;
+  padding: 1rem;
 }
 .logInfo {
   margin: 1rem 0;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
+}
+.title{
+  text-align: center;
 }
 </style>
