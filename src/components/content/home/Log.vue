@@ -51,6 +51,6 @@ export default {
   border: 1px solid #d1d5da;
   border-radius: 3px;
   padding: 1rem;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
 }
 </style>
