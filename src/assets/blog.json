@@ -29,10 +29,10 @@
         "updatedAt": "2019-11-21"
     },{
         "id": "bind",
-        "title": "模拟实现bind",
+        "title": "模拟实现bind&new",
         "tag": "JavaScript",
         "filename": "bind.md",
-        "wordcount": "667",
-        "updatedAt": "2019-11-21"
+        "wordcount": "514",
+        "updatedAt": "2019-11-22"
     }
 ]
