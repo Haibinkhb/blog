@@ -32,7 +32,15 @@
         "title": "模拟实现bind&new",
         "tag": "JavaScript",
         "filename": "bind.md",
-        "wordcount": "514",
+        "wordcount": "961",
         "updatedAt": "2019-11-22"
+    },
+    {
+        "id": "object",
+        "title": "创建对象和继承的多种方式及优缺点",
+        "tag": "JavaScript",
+        "filename": "object.md",
+        "wordcount": "1063",
+        "updatedAt": "2019-11-23"
     }
 ]

@@ -116,7 +116,7 @@ Function.prototype.myBind4 = function (obj) {
 }
 ```
 
-调用 bind 函数的必须时一个函数：
+调用 bind 函数的必须是一个函数：
 
 ```js
 if(typeof this !== "function"){
@@ -174,10 +174,10 @@ p.greet() // 我是练习时长两年半的练习生cxk
 
 ```js
 function Trainee(name, age){
-    ......
+    ...
 }
 
-function objectFactory(Trainee, ......){}; //和 new Trainee(......)一样的效果
+function objectFactory(Trainee, ...){}; //和 new Trainee(...)一样的效果
 ```
 
 因为 new 会返回一个对象，所以要创建对象并返回，而且对象会具有 Trainee 构造函数里的属性(如：this.name = name)，所以可以用 Trainee.apply(obj, arguments)来给对象添加属性。
@@ -209,7 +209,7 @@ function objectFactory(){
 ```js
 functiono bjectFactory(){
     var obj = new Object();
-    Constructor  = [].shift.call(arguments); 
+    Constructor  = [].shift.call(arguments);
     obj.__proto__ = Constructor.prototype;
     Constructor.apply(obj, arguments);
     return obj;
