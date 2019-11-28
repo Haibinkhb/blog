@@ -92,4 +92,4 @@ console.log(Person === Person.prototype.constructor); // true
 
 * [JavaScript深入之从原型到原型链](https://github.com/mqyqingfeng/Blog/issues/2)
 
-说明：本文大量参考各位大佬博客，本人出于复习和总结知识点的目的加入些许个人理解，如有冒犯，敬请谅解。
+说明：本文大量参考[冴羽大佬博客](https://github.com/mqyqingfeng/Blog)，本人出于复习和总结知识点的目的加入些许个人理解，如有冒犯，敬请谅解。

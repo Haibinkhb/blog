@@ -13,21 +13,18 @@ export default new VueRouter({
             redirect:'/home'
         },
         {
-            path:'/home', 
+            path:'/home',
             name:'home',
-            component:Home,
-            children:[
-                
-            ]
+            component: Home,
+        },
+        {
+            path: '/home/:id',
+            component: Log,
         },
         {
             path: '/about',
             name: 'about',
             component: About
-        },
-        {
-            path: '/log/:id',
-            component: Log
         }
     ]
 })   

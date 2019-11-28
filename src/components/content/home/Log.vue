@@ -27,7 +27,7 @@ export default {
     methods: {
       render () {
         this.componentFile =  () => ({
-          component: import(`./../../../assets/blogMd/${this.log?this.log.filename:"this.md"}`),
+          component: import(`./../../../assets/blogMd/${this.log?this.log.filename:"empty.md"}`),
           loading: { template: '<div style="height: 100%; width: 100%; display: table;"><div style="display: table-cell; vertical-align: middle; text-align: center;"><div>加载中</div></div></div>' },
           error:  { template: '<div style="height: 100%; width: 100%; display: table;"><div style="display: table-cell; vertical-align: middle; text-align: center;"><div>加载错误</div></div></div>' },
           delay: 200,
@@ -48,7 +48,6 @@ export default {
   color: #24292e;
   width: 80vw;
   margin: 3rem auto;
-  border: 1px solid #d1d5da;
   border-radius: 3px;
   padding: 1rem;
   font-size: 1.1rem;

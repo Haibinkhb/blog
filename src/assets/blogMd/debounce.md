@@ -243,4 +243,4 @@ function throttle(fun, wait){
 * [JavaScript专题之跟着underscore学防抖](https://github.com/mqyqingfeng/Blog/issues/22)
 * [avaScript专题之跟着 underscore 学节流](https://github.com/mqyqingfeng/Blog/issues/26)
 
-说明：本文全部参考yayu大佬的博客，本人出于复习和总结知识点的目的加入些许个人理解，如有冒犯，敬请谅解。
+说明：本文全部参考[冴羽大佬博客](https://github.com/mqyqingfeng/Blog)，本人出于复习和总结知识点的目的加入些许个人理解，如有冒犯，敬请谅解。

@@ -412,4 +412,4 @@ prototype(Child, Parent);
 * [JavaScript深入之创建对象的多种方式和优缺点](https://github.com/mqyqingfeng/Blog/issues/15)
 * [JavaScript深入之继承的多种方式和优缺点](https://github.com/mqyqingfeng/Blog/issues/16)
 
-说明：本文全部参考yayu大佬的博客，本人出于复习和总结知识点的目的加入些许个人理解，如有冒犯，敬请谅解。
+说明：本文全部参考[冴羽大佬博客](https://github.com/mqyqingfeng/Blog)，本人出于复习和总结知识点的目的加入些许个人理解，如有冒犯，敬请谅解。

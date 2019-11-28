@@ -1,16 +1,11 @@
 <template>
   <div class="header">
-    <div class="logo">logo</div>
     <div class="nav">
       <ul class="nav-list">
-        <li
-          @click="handleSelect(index)"
-          v-for="(nav, index) in navList"
-          :key="index"
-        >
+        <li ref="li" v-for="(nav, index) in navList" :key="index">
           <router-link
-            :to="{name:nav}"
-            :class="[currentIndex === index ? 'active' : '']"
+            :to="`/${nav}`"
+            :class="[currented(nav) ? 'active' : '']"
             >{{ nav }}</router-link
           >
         </li>
@@ -23,15 +18,13 @@
 export default {
   data() {
     return {
-      navList: ["home", "about"],
-      currentIndex: 0
+      navList: ["home", "about"]
     };
   },
-
   computed: {},
   methods: {
-    handleSelect(index) {
-      this.currentIndex = index;
+    currented(nav) {
+      return this.$route.name === nav || this.$route.path.indexOf(nav) !== -1;
     }
   }
 };

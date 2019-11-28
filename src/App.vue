@@ -1,25 +1,25 @@
 <template>
   <div id="app">
-   <Header  class="header"/>
-   <Content class="content" />
+     <Header class="header" />
+      <Content class="content" />
   </div>
 </template>
 
 <script>
-import Header from './components/Header.vue'
-import Content from './components/content/Content.vue'
+import Header from "./components/Header.vue";
+import Content from "./components/content/Content.vue";
 export default {
-  name: 'app',
+  name: "app",
   components: {
     Header,
     Content
   }
-}
+};
 </script>
 
 <style>
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   display: flex;

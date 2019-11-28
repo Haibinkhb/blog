@@ -239,4 +239,4 @@ Function.prototype.myApply = function(obj, arr){
 
 * [JavaScript中apply、call的详解](https://github.com/lin-xin/blog/issues/7)
 
-说明：本文大量参考各位大佬博客，本人出于复习和总结知识点的目的加入些许个人理解，如有冒犯，敬请谅解。
+说明：本文大量参考[冴羽大佬博客](https://github.com/mqyqingfeng/Blog)，本人出于复习和总结知识点的目的加入些许个人理解，如有冒犯，敬请谅解。

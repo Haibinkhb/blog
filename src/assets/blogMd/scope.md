@@ -355,4 +355,4 @@ ECStack = [
 * [JavaScript深入之作用域链](https://github.com/mqyqingfeng/Blog/issues/6)
 * [JavaScript的『预解释』与『变量提升』](http://www.cxymsg.com/guide/hoisting.html#%E5%89%8D%E8%A8%80)
 
-说明：本文大量参考各位大佬博客，本人出于复习和总结知识点的目的加入些许个人理解，如有冒犯，敬请谅解。
+说明：本文大量参考[冴羽大佬博客](https://github.com/mqyqingfeng/Blog)，本人出于复习和总结知识点的目的加入些许个人理解，如有冒犯，敬请谅解。

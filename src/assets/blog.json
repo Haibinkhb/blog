@@ -49,5 +49,13 @@
         "filename": "debounce.md",
         "wordcount": "1118",
         "updatedAt": "2019-11-24"
+    },
+    {
+        "id": "typeof",
+        "title": "类型判断",
+        "tag": "JavaScript",
+        "filename": "typeof.md",
+        "wordcount": "756",
+        "updatedAt": "2019-11-26"
     }
 ]

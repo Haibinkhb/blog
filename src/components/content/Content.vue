@@ -7,10 +7,6 @@
 </template>
 
 <script>
-// import Home from './home/Home.vue'
 export default {
-    components:{
-        
-    }
 }
 </script>
