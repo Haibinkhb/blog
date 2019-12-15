@@ -1,9 +1,8 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-
-import Home from './../components/content/home/Home.vue'
-import About from './../components/content/about/About.vue'
-import Log from './../components/content/home/Log.vue'
+import Home from 'page/home/Home.vue'
+import Log from 'page/home/componets/HomeLog.vue'
+import About from 'page/about/About.vue'
 Vue.use(VueRouter)
 
 export default new VueRouter({

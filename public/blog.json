@@ -57,5 +57,12 @@
         "filename": "typeof.md",
         "wordcount": "756",
         "updatedAt": "2019-11-26"
+    },{
+        "id": "let",
+        "title": "let&const",
+        "tag": "ES6",
+        "filename": "let.md",
+        "wordcount": "756",
+        "updatedAt": "2019-11-26"
     }
 ]
