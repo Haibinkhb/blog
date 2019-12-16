@@ -68,6 +68,6 @@ export default {
   margin: 3rem auto;
   border-radius: 3px;
   padding: 1rem;
-  font-size: 1.1rem;
+  font-size: .44rem;
 }
 </style>
