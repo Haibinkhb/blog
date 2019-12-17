@@ -4,8 +4,8 @@
       <router-link
         tag="div"
         :to="`/home/${log.id}`"
-        v-for="(log, index) in blogs"
-        :key="index"
+        v-for="log in blogs"
+        :key="log._id"
         v-show="blogs.length"
       >
         <div class="content">
