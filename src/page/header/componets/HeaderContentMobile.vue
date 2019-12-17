@@ -1,7 +1,7 @@
 <template>
   <div class="content-container-xs">
     <div class="content-list-xs">
-      <div class="header-item-xs" v-for="(nav, index) in navList" :key="index">
+      <div @click="handleItemClick(nav)" :ref="nav" class="header-item-xs" v-for="(nav, index) in navList" :key="index">
         <icon-svg class="header-icon-xs" :icon-class="nav"></icon-svg>
         <span class="item-desc-xs">{{ nav }}</span>
         <icon-svg
@@ -9,6 +9,7 @@
           class="categories-icon-xs"
           icon-class="sort-down"
         ></icon-svg>
+        <header-categories v-if="nav === 'Categories' && showCategories"></header-categories>
       </div>
     </div>
     <div class="header-input-xs">
@@ -22,16 +23,35 @@
 
 <script>
 import IconSvg from "common/icon/IconSvg.vue";
+import HeaderCategories from './HeaderCategories'
 export default {
     name:"HeaderContentMobile",
   data() {
     return {
       keyWord: "Search",
-      navList: ["Categories", "Tags", "Archive", "About"]
+      navList: ["Categories", "Tags", "Archive", "About"],
+      showCategories:false
     };
   },
+  methods:{
+    handleItemClick(nav){
+      if(nav === "Categories"){
+        this.showCategories = !this.showCategories
+      }
+    }
+  },
+  watch:{
+    showCategories(){
+      if(this.showCategories){
+       this.$refs.Categories[0].style.color = "#fff"
+      }else{
+        this.$refs.Categories[0].style.color = "rgba(255,255,255,0.7)"
+      }
+    }
+  },
   components: {
-    IconSvg
+    IconSvg,
+    HeaderCategories
   }
 };
 </script>

@@ -48,9 +48,6 @@ export default {
         }
       };
     },
-    handleItemClick(e) {
-      console.log(e.target);
-    },
     handleMenuClick() {
       this.showContainer = !this.showContainer;
     }

@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import Header from "common/header/Header.vue";
+import Header from "page/header/Header.vue";
 export default {
   name: "app",
   components: {
@@ -19,7 +19,7 @@ export default {
 
 <style>
 #app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
+  font-family: Arial, "Microsoft Yahei", "Helvetica Neue", Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   display: flex;
