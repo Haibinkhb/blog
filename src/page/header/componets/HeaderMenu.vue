@@ -1,5 +1,5 @@
 <template>
-  <div @click="handleMenuClick">
+  <div @click.prevent="handleMenuClick">
     <icon-svg class="menu" icon-class="menu"></icon-svg>
   </div>
 </template>

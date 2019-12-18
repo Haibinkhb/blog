@@ -7,6 +7,13 @@ import 'styles/reset.css'
 import 'assets/symbol.js'
 Vue.config.productionTip = false
 Vue.prototype.axios = axios
+router.beforeEach((to, from, next) => {
+  if (to.fullPath === "/Categories") {
+    next(false)
+  } else {
+    next()
+  }
+})
 new Vue({
   router,
   render: h => h(App),

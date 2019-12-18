@@ -1,20 +1,10 @@
 <template>
   <div class="content-container">
     <div class="content-list">
-      <div @click="handleItemClick(nav)" :ref="nav" class="header-item" v-for="(nav, index) in navList" :key="index">
-        <icon-svg class="header-icon" :icon-class="nav"></icon-svg>
-        <span class="item-desc">{{ nav }}</span>
-        <icon-svg
-          v-if="nav === 'Categories'"
-          class="categories-icon"
-          icon-class="sort-down"
-        ></icon-svg>
-        <div v-if="nav === 'Categories'" class="categories-icon"></div>
-        <header-categories v-if="nav === 'Categories' && showCategories"></header-categories>
-      </div>
+      <header-item class="item-list" :nav="nav" v-for="nav in navList" :key="nav._id"></header-item>
     </div>
     <div class="header-input">
-      <input type="text" v-model="keyWord" />
+      <input @focus="handleInputFocus" @blur="handleInputBlur"  type="text" v-model="keyWord" />
       <div class="search-icon">
         <icon-svg icon-class="search"></icon-svg>
       </div>
@@ -24,35 +14,43 @@
 
 <script>
 import IconSvg from "common/icon/IconSvg.vue";
-import HeaderCategories from './HeaderCategories'
+import HeaderItem from 'common/headerItem/HeaderItem'
 export default {
     name:"HeaderContent",
     data() {
     return {
+      clientWidth:0,
       keyWord: "Search",
-      navList: ["Categories", "Tags", "Archive", "About"],
-      showCategories:false
+      navList: [{
+        _id:1,
+        name:"Categories",
+        secMenu:true
+      }, {
+        _id:2,
+        name:"Tags",
+        secMenu:false
+      },{
+        _id:3,
+        name:"Archive",
+        secMenu:false
+      },{
+        _id:4,
+        name:"About",
+        secMenu:false
+      }]
     };
   },
-  methods:{
-    handleItemClick(nav){
-      if(nav === "Categories"){
-        this.showCategories = !this.showCategories
-      }
+  methods: {
+    handleInputFocus(){
+      this.keyWord = "" // 清空占位字符
+    },
+    handleInputBlur(){
+      this.keyWord = "Search" // 还原占位符...（属实憨憨操作）
     }
-  },
-   watch:{
-    showCategories(){
-      if(this.showCategories){
-       this.$refs.Categories[0].style.color = "#fff"
-      }else{
-        this.$refs.Categories[0].style.color = "rgba(255,255,255,0.7)"
-      }
-    }
-  },
+    },
   components: {
     IconSvg,
-    HeaderCategories
+    HeaderItem
   }
 };
 </script>
@@ -69,19 +67,6 @@ export default {
         display none !important
       .content-list
         display flex
-        justify-content space-evenly
-        .header-item
-          cursor: pointer
-          padding  0 .4rem
-          font-size .40rem
-          color rgba(255, 255, 255, 0.7)
-          &:hover
-            color #fff
-          .item-desc
-            padding-left .1rem
-          .categories-icon
-            font-size .34rem
-            padding-left .2rem
       .header-input
         margin .15rem 0
         width 26%

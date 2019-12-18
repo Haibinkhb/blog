@@ -5,6 +5,7 @@ import Log from 'page/home/componets/HomeLog.vue'
 import About from 'page/about/About.vue'
 Vue.use(VueRouter)
 
+
 export default new VueRouter({
     routes: [
         {

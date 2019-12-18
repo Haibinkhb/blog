@@ -17,7 +17,7 @@ import HeaderLogo from "./componets/HeaderLogo";
 export default {
   data() {
     return {
-      clientWidth: 0, // 监听屏幕宽度判断是否显示 HeaderContentMobile
+      clientWidth: "", // 监听屏幕宽度判断是否显示 HeaderContentMobile
       showContainer: false // 是否显示 HeaderContentMobile
     };
   },
@@ -26,13 +26,13 @@ export default {
     // 监听 window 的 resize 事件
     window.onresize = this.throttle(() => {
       this.clientWidth = `${document.documentElement.clientWidth}px`;
+      console.log(this.clientWidth)
       // 隐藏 HeaderContentMobile
       if (parseInt(this.clientWidth) > 963) { // 实测 963 最合适
         this.showContainer = false;
       }
     }, 50);
   },
-  computed: {},
   methods: {
     // 节流函数
     throttle(func, wait) {
@@ -75,7 +75,7 @@ export default {
     margin 0 auto
   @media (max-width : 1420px)
     .header-content
-      width 90% !important
+      width 88% !important
   @media (max-width : 980px)
     .header-content
       justify-content space-between !important

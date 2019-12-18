@@ -1,7 +1,7 @@
 <template>
   <div class="categoriges">
      <ul>
-         <li>Javascript...fsgdfa</li>
+         <li>JavaScript</li>
          <li>ES6</li>
          <li>Vue</li>
      </ul>
@@ -17,6 +17,7 @@ export default {
 <style lang="stylus" scoped>
 @import '~styles/variable.styl'
 .categoriges
+    
     position absolute
     z-index 1
     background-color $themeColor
@@ -29,6 +30,7 @@ export default {
         text-align left 
         font-size $fontSize
         li
+            font-size .40rem
             padding 0 .5rem
             box-sizing border-box
             &:hover
