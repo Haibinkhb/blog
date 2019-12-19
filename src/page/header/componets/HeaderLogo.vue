@@ -14,7 +14,7 @@ export default {
 
 <style lang="stylus" scoped>
 .header-logo
-  margin-right .2rem
+  margin-right .5rem
   font-family SairaSemiCondensed-Bold
   font-size .56rem
   color #fff

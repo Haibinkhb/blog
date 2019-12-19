@@ -37,7 +37,7 @@ export default {
     render() {
       this.componentFile = () => ({
         component: import(
-          `./../../../../public/markdown/${this.log ? this.log.filename : "empty.md"}`
+          `markdown/${this.log ? this.log.filename : "empty.md"}`
         ),
         loading: {
           template:

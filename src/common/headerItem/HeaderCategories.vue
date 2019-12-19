@@ -17,7 +17,7 @@ export default {
 <style lang="stylus" scoped>
 @import '~styles/variable.styl'
 .categoriges
-    
+    width inherit
     position absolute
     z-index 1
     background-color $themeColor
@@ -30,7 +30,7 @@ export default {
         text-align left 
         font-size $fontSize
         li
-            font-size .40rem
+            font-size .36rem
             padding 0 .5rem
             box-sizing border-box
             &:hover

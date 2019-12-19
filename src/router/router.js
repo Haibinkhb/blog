@@ -1,10 +1,9 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from 'page/home/Home.vue'
-import Log from 'page/home/componets/HomeLog.vue'
+import ContentLogs from 'page/content/components/content-left/ContentLogs.vue'
+import Log from 'page/content/components/content-left/Log.vue'
 import About from 'page/about/About.vue'
 Vue.use(VueRouter)
-
 
 export default new VueRouter({
     routes: [
@@ -15,7 +14,7 @@ export default new VueRouter({
         {
             path:'/home',
             name:'home',
-            component: Home,
+            component: ContentLogs,
         },
         {
             path: '/home/:id',

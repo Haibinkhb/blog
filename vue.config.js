@@ -3,9 +3,6 @@ function resolve(dir) {
     return path.join(__dirname, dir)
 }
 module.exports = {
-    publicPath: process.env.NODE_ENV === 'production'
-        ? './'
-        : '/',
     chainWebpack: config => {
         config.module.rule('md')
             .test(/\.md/)
@@ -22,13 +19,17 @@ module.exports = {
             .set('page', resolve('src/page'))
             .set('common', resolve('src/common'))
             .set('styles', resolve('src/assets/styles'))
+            .set('markdown', resolve('public/markdown'))
     },
     devServer: {
         proxy: {
             '/api': {
                 target: 'http://localhost:8080',
                 changeOrigin: true,
-                ws: true
+                ws: true,
+                pathRewrite: {
+                    '^/api': ''
+                }
             }
         }
     }

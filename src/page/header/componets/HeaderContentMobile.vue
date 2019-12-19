@@ -1,8 +1,13 @@
 <template>
   <div class="content-container-xs">
-    <header-item :nav="nav" v-for="nav in navList" :key="nav._id"></header-item>
+    <header-item :showCategories="showCategories" :nav="nav" v-for="nav in navList" :key="nav._id"></header-item>
     <div class="header-input-xs">
-      <input  @focus="handleInputFocus" @blur="handleInputBlur" type="text" v-model="keyWord" />
+      <input
+        @focus="handleInputFocus"
+        @blur="handleInputBlur"
+        type="text"
+        v-model="keyWord"
+      />
       <div class="search-icon-xs">
         <icon-svg icon-class="search"></icon-svg>
       </div>
@@ -12,37 +17,45 @@
 
 <script>
 import IconSvg from "common/icon/IconSvg.vue";
-import HeaderItem from 'common/headerItem/HeaderItem'
+import HeaderItem from "common/headerItem/HeaderItem";
 export default {
-    name:"HeaderContentMobile",
+  name: "HeaderContentMobile",
+  props:{
+    showCategories:Boolean
+  },
   data() {
     return {
       keyWord: "Search",
-       navList: [{
-        _id:1,
-        name:"Categories",
-        secMenu:true
-      }, {
-        _id:2,
-        name:"Tags",
-        secMenu:false
-      },{
-        _id:3,
-        name:"Archive",
-        secMenu:false
-      },{
-        _id:4,
-        name:"About",
-        secMenu:false
-      }]
+      navList: [
+        {
+          _id: 1,
+          name: "Categories",
+          secMenu: true
+        },
+        {
+          _id: 2,
+          name: "Tags",
+          secMenu: false
+        },
+        {
+          _id: 3,
+          name: "Archive",
+          secMenu: false
+        },
+        {
+          _id: 4,
+          name: "About",
+          secMenu: false
+        }
+      ]
     };
   },
-  methods:{
-    handleInputFocus(){
-      this.keyWord = "" // 清空占位字符
+  methods: {
+    handleInputFocus() {
+      this.keyWord = ""; // 清空占位字符
     },
-    handleInputBlur(){
-      this.keyWord = "Search" // 还原占位符...（属实憨憨操作）
+    handleInputBlur() {
+      this.keyWord = "Search"; // 还原占位符...（属实憨憨操作）
     }
   },
   components: {
@@ -75,7 +88,7 @@ export default {
         width 90%
         box-sizing border-box
         padding-left .2rem
-        font-size .40rem
+        font-size .38rem
       .search-icon-xs
         font-size .40rem
         color #fff

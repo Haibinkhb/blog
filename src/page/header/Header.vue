@@ -3,9 +3,15 @@
     <div class="header-content">
       <header-logo></header-logo>
       <header-content></header-content>
-      <header-menu @menuclick="handleMenuClick"></header-menu>
+      <header-menu
+        :showCategories="showCategories"
+        @menuclick="handleMenuClick"
+      ></header-menu>
     </div>
-     <header-content-mobile v-if="showContainer"></header-content-mobile>
+    <header-content-mobile
+      :showCategories="showCategories"
+      v-if="showContainer"
+    ></header-content-mobile>
   </div>
 </template>
 
@@ -18,7 +24,8 @@ export default {
   data() {
     return {
       clientWidth: "", // 监听屏幕宽度判断是否显示 HeaderContentMobile
-      showContainer: false // 是否显示 HeaderContentMobile
+      showContainer: false, // 是否显示 HeaderContentMobile
+      showCategories: false
     };
   },
   mounted() {
@@ -26,9 +33,10 @@ export default {
     // 监听 window 的 resize 事件
     window.onresize = this.throttle(() => {
       this.clientWidth = `${document.documentElement.clientWidth}px`;
-      console.log(this.clientWidth)
       // 隐藏 HeaderContentMobile
-      if (parseInt(this.clientWidth) > 963) { // 实测 963 最合适
+      if (parseInt(this.clientWidth) > 963) {
+        // 实测 963 最合适
+        this.showCategories = false;
         this.showContainer = false;
       }
     }, 50);

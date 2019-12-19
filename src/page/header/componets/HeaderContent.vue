@@ -1,7 +1,7 @@
 <template>
   <div class="content-container">
     <div class="content-list">
-      <header-item class="item-list" :nav="nav" v-for="nav in navList" :key="nav._id"></header-item>
+      <header-item class="item-list" :showCategories="showCategories" :nav="nav" v-for="nav in navList" :key="nav._id"></header-item>
     </div>
     <div class="header-input">
       <input @focus="handleInputFocus" @blur="handleInputBlur"  type="text" v-model="keyWord" />
@@ -17,6 +17,9 @@ import IconSvg from "common/icon/IconSvg.vue";
 import HeaderItem from 'common/headerItem/HeaderItem'
 export default {
     name:"HeaderContent",
+    props:{
+      showCategories:Boolean
+    },
     data() {
     return {
       clientWidth:0,
@@ -67,6 +70,7 @@ export default {
         display none !important
       .content-list
         display flex
+        text-align center
       .header-input
         margin .15rem 0
         width 26%
@@ -83,7 +87,7 @@ export default {
           width 90%
           box-sizing border-box
           padding-left .2rem
-          font-size .40rem
+          font-size .38rem
         .search-icon
           font-size .40rem
           color #fff
