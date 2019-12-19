@@ -1,18 +1,18 @@
 <template>
   <div id="app">
      <Header class="header" />
-     <keep-alive>
-        <router-view></router-view>
-     </keep-alive>
+     <Content />
   </div>
 </template>
 
 <script>
 import Header from "page/header/Header.vue";
+import Content from "page/content/Content.vue";
 export default {
   name: "app",
   components: {
-    Header
+    Header,
+    Content
   }
 };
 </script>

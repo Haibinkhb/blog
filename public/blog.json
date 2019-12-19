@@ -6,7 +6,7 @@
         "tag": "JavaScript",
         "filename": "prototype.md",
         "wordcount": "588",
-        "updatedAt": "2019-11-16"
+        "date": "2019-11-16"
     },{
          "_id":"002",
         "id": "scope",
@@ -14,7 +14,7 @@
         "tag": "JavaScript",
         "filename": "scope.md",
         "wordcount": "2340",
-        "updatedAt": "2019-11-17"
+        "date": "2019-11-17"
     },{
          "_id":"003",
         "id": "this",
@@ -22,7 +22,7 @@
         "tag": "JavaScript",
         "filename": "this.md",
         "wordcount": "1900",
-        "updatedAt": "2019-11-19"
+        "date": "2019-11-19"
     },{
          "_id":"004",
         "id": "call",
@@ -30,7 +30,7 @@
         "tag": "JavaScript",
         "filename": "call&apply.md",
         "wordcount": "667",
-        "updatedAt": "2019-11-21"
+        "date": "2019-11-21"
     },{
          "_id":"005",
         "id": "bind",
@@ -38,7 +38,7 @@
         "tag": "JavaScript",
         "filename": "bind.md",
         "wordcount": "961",
-        "updatedAt": "2019-11-22"
+        "date": "2019-11-22"
     },
     {
          "_id":"006",
@@ -47,7 +47,7 @@
         "tag": "JavaScript",
         "filename": "object.md",
         "wordcount": "1063",
-        "updatedAt": "2019-11-23"
+        "date": "2019-11-23"
     },{
          "_id":"007",
         "id": "debounce",
@@ -55,7 +55,7 @@
         "tag": "JavaScript",
         "filename": "debounce.md",
         "wordcount": "1118",
-        "updatedAt": "2019-11-24"
+        "date": "2019-11-24"
     },
     {
          "_id":"008",
@@ -64,7 +64,7 @@
         "tag": "JavaScript",
         "filename": "typeof.md",
         "wordcount": "756",
-        "updatedAt": "2019-11-26"
+        "date": "2019-11-26"
     },{
          "_id":"009",
         "id": "let",
@@ -72,6 +72,6 @@
         "tag": "ES6",
         "filename": "let.md",
         "wordcount": "756",
-        "updatedAt": "2019-11-26"
+        "date": "2019-11-26"
     }
 ]
