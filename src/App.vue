@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-     <Header class="header" />
-     <Content />
+     <Header class="header"></Header>
+     <Content></Content>
   </div>
 </template>
 
@@ -24,6 +24,7 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   display: flex;
   flex-direction: column;
+  align-items: center;
   width: 100vw;
 }
 </style>

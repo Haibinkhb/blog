@@ -32,7 +32,10 @@ export default {
       this.axios.get("blog.json").then(this.getBlogJsonSucc);
     },
     getBlogJsonSucc(res) {
-      this.blogs = res.data;
+      res = res.data
+      if(res.ret){
+        this.blogs = res.data;
+      }
     },
     render() {
       this.componentFile = () => ({
@@ -54,20 +57,17 @@ export default {
   },
   watch: {
     log() {
-      this.render();
+      this.render()
     }
   }
 };
 </script>
 
-<style scoped>
-.content {
-  border: 1px solid #e1e4e8;
-  color: #24292e;
-  width: 80vw;
-  margin: 3rem auto;
-  border-radius: 3px;
-  padding: 1rem;
-  font-size: .44rem;
-}
+<style lang="stylus" scoped>
+.content 
+  color #24292e
+  width 100%
+  font-size .44rem
+.markdown-body
+  margin 0
 </style>

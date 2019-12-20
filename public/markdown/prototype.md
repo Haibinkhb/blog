@@ -12,7 +12,7 @@ let p2 = new Person();
 console.log(p1.name, p2.name)   // cxk, cxk
 ```
 
-上面代码中创建了一个构造函数 Person ,然后使用 new (或者说是：“普通”函数 Person 使用 new 关键字来构造调用?)创建了两个实例对象(p1, p2)。
+上面代码中创建了一个构造函数 Person ,然后使用 new (或者说是：函数 Person 使用 new 关键字来构造调用？)创建了两个实例对象(p1, p2)。
 
 绝大部分函数都有一个 prototype 属性,它会指向一个对象，它指向的这个对象就是实例的原型。也就是说上例中的 Person 构造函数的 prototype 属性的值就是 p1, p2 的原型。
 

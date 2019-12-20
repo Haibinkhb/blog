@@ -1,8 +1,9 @@
 <template>
   <div class="content">
-    <content-title></content-title>
+    <content-title v-if="isRoot"></content-title>
     <div class="content-logs">
-      <content-left ></content-left>
+      <content-left v-if="isRoot" :blogs="blogs"></content-left>
+      <router-view v-else></router-view>
       <content-right ></content-right>
     </div>
   </div>
@@ -13,7 +14,33 @@ import ContentTitle from "./components/ContentTitle.vue";
 import ContentLeft from "./components/ContentLeft";
 import ContentRight from "./components/ContentRight";
 export default {
-  name: "home",
+  name: "Content",
+  data(){
+    return{
+      blogs:[]
+    }
+  },
+    mounted() {
+    this.getBlogJson();
+    console.log(this.isRoot)
+  },
+  computed:{
+    isRoot(){
+      return this.$route.fullPath === '/'
+    }
+  },
+  methods: {
+    getBlogJson() {
+      this.axios.get('blog.json')
+        .then(this.getBlogJsonSucc);
+    },
+    getBlogJsonSucc(res) {
+      res = res.data;
+      if(res.ret){
+        this.blogs = res.data
+      }
+    }
+  },
   components: {
     ContentTitle,
     ContentLeft,
@@ -27,7 +54,8 @@ export default {
   background-color #fff
   width 60%
   margin 0 auto
+  @media (max-width : 1420px)
+    width 88% !important
   .content-logs
     display flex
-    justify-content space-between
 </style>

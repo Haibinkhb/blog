@@ -1,38 +1,44 @@
 <template>
   <div class="content-logs">
-      <div>title</div>
-      <div>desc</div>
+      <router-link :to="'/'+log.id" class="log-title">{{log.title}}</router-link>
+      <div class="log-desc">{{log.desc}}</div>
   </div>
 </template>
 
 <script>
 
 export default {
+  props:{
+    log:Object
+  },
   data() {
     return {
-      blogs: []
-    };
-  },
-  mounted() {
-    this.getBlogJson();
-  },
-  methods: {
-    getBlogJson() {
-      this.axios.get('blog.json')
-        .then(this.getBlogJsonSucc);
-    },
-    getBlogJsonSucc(res) {
-      this.blogs = res.data;
+
     }
   },
   components:{
+
   }
 };
 </script>
 
 <style lang="stylus" scoped>
+@import "~styles/mixins.styl"
 .content-logs
   display flex
-  flex 1
-  margin-left .4rem
+  flex-direction column
+  justify-content space-between
+  .log-title
+    cursor: pointer
+    color #2A579A
+    font-size .44rem
+    margin-bottom .4rem
+  .log-desc
+    font-size .32rem
+    line-height .44rem
+    overflow hidden
+    text-overflow ellipsis
+    display -webkit-box
+    -webkit-line-clamp 2
+    -webkit-box-orient vertical
 </style>

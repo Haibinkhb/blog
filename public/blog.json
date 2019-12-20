@@ -1,77 +1,138 @@
-[
-    {
-        "_id":"001",
-        "id": "prototype",
-        "title": "JavaScript原型和原型链",
-        "tag": "JavaScript",
-        "filename": "prototype.md",
-        "wordcount": "588",
-        "date": "2019-11-16"
-    },{
-         "_id":"002",
-        "id": "scope",
-        "title": "JavaScript作用域",
-        "tag": "JavaScript",
-        "filename": "scope.md",
-        "wordcount": "2340",
-        "date": "2019-11-17"
-    },{
-         "_id":"003",
-        "id": "this",
-        "title": "this&闭包",
-        "tag": "JavaScript",
-        "filename": "this.md",
-        "wordcount": "1900",
-        "date": "2019-11-19"
-    },{
-         "_id":"004",
-        "id": "call",
-        "title": "模拟实现call&apply",
-        "tag": "JavaScript",
-        "filename": "call&apply.md",
-        "wordcount": "667",
-        "date": "2019-11-21"
-    },{
-         "_id":"005",
-        "id": "bind",
-        "title": "模拟实现bind&new",
-        "tag": "JavaScript",
-        "filename": "bind.md",
-        "wordcount": "961",
-        "date": "2019-11-22"
-    },
-    {
-         "_id":"006",
-        "id": "object",
-        "title": "创建对象和继承的多种方式及优缺点",
-        "tag": "JavaScript",
-        "filename": "object.md",
-        "wordcount": "1063",
-        "date": "2019-11-23"
-    },{
-         "_id":"007",
-        "id": "debounce",
-        "title": "防抖&节流",
-        "tag": "JavaScript",
-        "filename": "debounce.md",
-        "wordcount": "1118",
-        "date": "2019-11-24"
-    },
-    {
-         "_id":"008",
-        "id": "typeof",
-        "title": "类型判断",
-        "tag": "JavaScript",
-        "filename": "typeof.md",
-        "wordcount": "756",
-        "date": "2019-11-26"
-    },{
-         "_id":"009",
-        "id": "let",
-        "title": "let&const",
-        "tag": "ES6",
-        "filename": "let.md",
-        "wordcount": "756",
-        "date": "2019-11-26"
-    }
-]
+{
+    "ret": true,
+    "allTags": ["JavaScript","Vue","ES6","webpack","原理","常用功能","性能","总结"],
+    "data":[
+        {
+            "_id": "001",
+            "id": "prototype",
+            "title": "JavaScript 原型和原型链",
+            "desc":"每个实例对象（ object ）都有一个私有属性（称之为 __proto__ ）指向它的构造函数的原型对象（prototype ）。该原型对象也有一个自己的原型对象( __proto__ ) ，层层向上直到一个对象的原型对象为 null。根据定义，null 没有原型，并作为这个原型链中的最后一个环节。",
+            "tags": [
+                "JavaScript",
+                "原理"
+            ],
+            "filename": "prototype.md",
+            "wordcount": "588",
+            "date": "2019-11-16",
+            "categories": [
+                "JavaScript"
+            ]
+        },
+        {
+            "_id": "002",
+            "id": "scope",
+            "title": "JavaScript 作用域",
+            "tags": [
+                "JavaScript",
+                "原理"
+            ],
+            "desc":"作用域是指源代码定义变量的区域。作用域规定了如何查找变量，也就是确定当前执行代码对变量的访问权限。",
+            "filename": "scope.md",
+            "wordcount": "2340",
+            "date": "2019-11-17",
+            "categories": [
+                "JavaScript"
+            ]
+        },
+        {
+            "_id": "003",
+            "id": "this",
+            "title": "this 和闭包",
+            "tags": [
+                "JavaScript",
+                "原理"
+            ],
+            "desc":"在绝大多数情况下，函数的调用方式决定了 this 的值。this 不能在执行期间被赋值，并且在每次函数被调用时 this 的值也可能会不同。ES5引入了bind方法来设置函数的this值，而不用考虑函数如何被调用的，ES2015 引入了支持 this 词法解析的箭头函数（它在闭合的执行环境内设置this的值）。",
+            "filename": "this.md",
+            "wordcount": "1900",
+            "date": "2019-11-19",
+            "categories": [
+                "JavaScript"
+            ]
+        },
+        {
+            "_id": "004",
+            "id": "call",
+            "title": "模拟实现 call 和 apply",
+            "tags": [
+                "JavaScript",
+                "原理",
+                "常用功能"
+            ],
+            "filename": "call&apply.md",
+            "desc":"call() 方法使用一个指定的 this 值和单独给出的一个或多个参数来调用一个函数。\napply() 方法调用一个具有给定this值的函数，以及作为一个数组（或类似数组对象）提供的参数。",
+            "wordcount": "667",
+            "date": "2019-11-21",
+            "categories": [
+                "JavaScript"
+            ]
+        },
+        {
+            "_id": "005",
+            "id": "bind",
+            "title": "模拟实现 bind 和 new",
+            "desc":"bind() 方法创建一个新的函数，在 bind() 被调用时，这个新函数的 this 被指定为 bind() 的第一个参数，而其余参数将作为新函数的参数，供调用时使用。\nnew 运算符创建一个用户定义的对象类型的实例或具有构造函数的内置对象的实例。",
+            "tags": [
+                "JavaScript",
+                "原理",
+                "常用功能"
+            ],
+            "filename": "bind.md",
+            "wordcount": "961",
+            "date": "2019-11-22",
+            "categories": [
+                "JavaScript"
+            ]
+        },
+        {
+            "_id": "006",
+            "id": "object",
+            "title": "创建对象和继承的多种方式及优缺点",
+            "tags": [
+                "JavaScript",
+                "原理",
+                "常用功能"
+            ],
+            "desc":"在使用原型继承编写复杂代码之前，理解原型继承模型是至关重要的。此外，请注意代码中原型链的长度，并在必要时将其分解，以避免可能的性能问题。此外，原生原型不应该被扩展，除非它是为了与新的 JavaScript 特性兼容。",
+            "filename": "object.md",
+            "wordcount": "1063",
+            "date": "2019-11-23",
+            "categories": [
+                "JavaScript"
+            ]
+        },
+        {
+            "_id": "007",
+            "id": "debounce",
+            "title": "防抖和节流",
+            "tags": [
+                "JavaScript",
+                "常用功能",
+                "性能"
+            ],
+            "desc":"防抖：对于连续触发的事件，只在事件停止触发的 n 秒后再执行事件。也就是说在一个事件触发的 n 秒内又触发了这个事件，那就以新的事件的时间为准，n 秒后才执行，就是要等你触发完事件的 n 秒内不再触发事件，才执行。\n节流：节流就是对于持续触发的事件，每隔一段事件，只执行一次事件。",
+            "filename": "debounce.md",
+            "wordcount": "1118",
+            "date": "2019-11-24",
+            "categories": [
+                "JavaScript"
+            ]
+        },
+        {
+            "_id": "008",
+            "id": "typeof",
+            "title": "类型判断",
+            "tags": [
+                "JavaScript",
+                "原理",
+                "常用功能"
+            ],
+            "desc":"typeof 是一元操作符，放在其单个操作数的前面，操作数可以是任意类型。返回值为表示操作数类型的一个字符串。",
+            "filename": "typeof.md",
+            "wordcount": "756",
+            "date": "2019-11-26",
+            "categories": [
+                "JavaScript"
+            ]
+        }]
+}
