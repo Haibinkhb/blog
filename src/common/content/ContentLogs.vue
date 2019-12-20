@@ -31,10 +31,10 @@ export default {
   .log-title
     cursor: pointer
     color #2A579A
-    font-size .44rem
+    font-size .40rem
     margin-bottom .4rem
   .log-desc
-    font-size .32rem
+    font-size .34rem
     line-height .44rem
     overflow hidden
     text-overflow ellipsis

@@ -1,5 +1,6 @@
 <template>
   <div class="content-left">
+    <content-title></content-title>
     <div class="article-list border-bottom" v-for="log in blogs" :key="log._id">
       <div>
         <article-date :date="log.date"></article-date>
@@ -15,6 +16,7 @@
 </template>
 
 <script>
+import ContentTitle from "./ContentTitle"
 import ContentLogs from "common/content/ContentLogs.vue";
 import ArticleDate from "common/content/ArticleDate.vue";
 import ContentTag from "common/content/ContentTag";
@@ -25,14 +27,15 @@ export default {
   components: {
     ContentLogs,
     ArticleDate,
-    ContentTag
+    ContentTag,
+    ContentTitle
   }
 };
 </script>
 
 <style lang="stylus" scoped>
 .content-left
-  width 75%
+  width 78%
   .article-list
     width 100%
     display flex

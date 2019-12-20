@@ -22,7 +22,7 @@ export default {
     background-color $themeColor
     padding .1rem .15rem
     color #fff
-    font-size .34rem
+    font-size .32rem
     margin-right .4rem
     &:hover
       background-color #3e6db5

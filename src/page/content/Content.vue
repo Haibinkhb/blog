@@ -1,6 +1,5 @@
 <template>
   <div class="content">
-    <content-title v-if="isRoot"></content-title>
     <div class="content-logs">
       <content-left v-if="isRoot" :blogs="blogs"></content-left>
       <router-view v-else></router-view>
@@ -10,7 +9,6 @@
 </template>
 
 <script>
-import ContentTitle from "./components/ContentTitle.vue";
 import ContentLeft from "./components/ContentLeft";
 import ContentRight from "./components/ContentRight";
 export default {
@@ -22,7 +20,6 @@ export default {
   },
     mounted() {
     this.getBlogJson();
-    console.log(this.isRoot)
   },
   computed:{
     isRoot(){
@@ -42,7 +39,6 @@ export default {
     }
   },
   components: {
-    ContentTitle,
     ContentLeft,
     ContentRight
   }
@@ -58,4 +54,5 @@ export default {
     width 88% !important
   .content-logs
     display flex
+    justify-content space-between
 </style>
