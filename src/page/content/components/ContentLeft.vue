@@ -1,6 +1,6 @@
 <template>
   <div class="content-left">
-    <content-title></content-title>
+    <content-title :count="blogs.length"></content-title>
     <div class="article-list border-bottom" v-for="log in blogs" :key="log._id">
       <div>
         <article-date :date="log.date"></article-date>
@@ -36,6 +36,8 @@ export default {
 <style lang="stylus" scoped>
 .content-left
   width 78%
+  @media (max-width : 980px)
+    width 100%
   .article-list
     width 100%
     display flex
@@ -45,6 +47,8 @@ export default {
       display flex
       flex-direction column
       margin-left .5rem
+      @media (max-width : 720px)
+        margin-left 0 !important
       .tag-list
         display flex
         flex-direction row

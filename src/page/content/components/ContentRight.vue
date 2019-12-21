@@ -20,7 +20,7 @@
 </template>
 
 <script>
-import CommonCard from "common/CommonCard.vue";
+import CommonCard from "common/content-right/CommonCard.vue";
 export default {
   props: {
     cardList:Array
@@ -38,7 +38,10 @@ export default {
 
 <style lang="stylus" scoped>
 .content-right
-  width 20%
+  width 25%
+  margin-left .5rem
+  @media (max-width : 980px)
+    display none
   .info-container
     width 100%
     position relative

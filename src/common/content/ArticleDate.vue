@@ -55,6 +55,8 @@ export default {
     text-align center
     width 1rem
     font-weight 900
+    @media (max-width : 720px)
+      display none !important
     .day
         border .03rem solid $themeColor
         font-size .40rem

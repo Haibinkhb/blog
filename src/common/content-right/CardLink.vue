@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import IconSvg from './icon/IconSvg.vue'
+import IconSvg from './../icon/IconSvg.vue'
 export default {
 props:{
     link:Object
@@ -30,6 +30,9 @@ components:{
     padding .2rem 0
     box-sizing border-box
     flex-wrap wrap
+    cursor pointer
+    &:hover
+        background-color rgba(0,0,0,.03)
     span
         padding .1rem .05rem
         box-sizing border-box

@@ -22,7 +22,7 @@ export default {
           name: "link",
           header: "More Links",
           content: [
-            { webSite: "github", userName: "a888888bbh", iconClass: "git" }
+            { webSite: "github", userName: "Haibinkhb", iconClass: "git" }
           ]
         },
         {
@@ -73,8 +73,10 @@ export default {
 .content 
   background-color #fff
   width 60%
-  margin 0 auto
+  margin 1.2rem auto
   @media (max-width : 1420px)
+    width 80% !important
+  @media (max-width : 980px)
     width 88% !important
   .content-logs
     display flex

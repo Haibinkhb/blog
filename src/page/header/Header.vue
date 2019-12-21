@@ -75,6 +75,10 @@ export default {
   width 100vw
   background-color $themeColor
   line-height 1rem
+  z-index 1
+  position fixed
+  top 0
+  left 0
   .header-content
     width 60%
     display flex
@@ -83,8 +87,9 @@ export default {
     margin 0 auto
   @media (max-width : 1420px)
     .header-content
-      width 88% !important
+      width 80% !important
   @media (max-width : 980px)
     .header-content
+      width 88% !important
       justify-content space-between !important
 </style>

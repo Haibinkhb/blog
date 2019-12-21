@@ -1,16 +1,13 @@
 <template>
-  <span class="tag">
+  <router-link to="/" class="tag">
     {{ tag }}
-  </span>
+  </router-link>
 </template>
 
 <script>
 export default {
   props: {
-    tag: {
-      type: String,
-      required: true
-    }
+    tag: String
   }
 };
 </script>
@@ -18,11 +15,12 @@ export default {
 <style lang="stylus" scoped>
 @import "~styles/variable.styl"
 .tag
-    cursor: pointer
+    cursor pointer
+    box-sizing border-box
     background-color $themeColor
-    padding .1rem .15rem
+    padding .2rem
     color #fff
-    font-size .32rem
+    font-size .34rem
     margin-right .2rem
     margin-top .2rem
     &:hover

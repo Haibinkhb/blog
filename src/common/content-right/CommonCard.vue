@@ -14,7 +14,7 @@
               <tag v-for="(tag, index) in card.content" :key="index" :tag="tag"></tag>
           </div>
       </template>
-      <template v-else-if="card.name === 'categories'">
+      <template v-else>
           <div class="categories" >
               <category v-for="(category, index) in card.content" :key="index" :category="category"></category>
           </div>
@@ -26,7 +26,7 @@
 <script>
 import CardTitle from "./CardTitle";
 import CardLink from "./CardLink.vue";
-import Tag from "./Tag.vue";
+import Tag from "./../Tag.vue";
 import Category from "./Category"
 export default {
   props: {
@@ -54,6 +54,6 @@ export default {
             width 100%
             display flex
             flex-wrap wrap
-            padding .2rem
-            box-sizing border-box
+            padding 0 .2rem .2rem .2rem
+            position relative
 </style>

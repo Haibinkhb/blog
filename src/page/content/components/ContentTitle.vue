@@ -1,13 +1,15 @@
 <template>
   <div class="content-title border-bottom">
       <h3>All Posts</h3>
-      <span>(10)</span>
+      <span>({{count}})</span>
   </div>
 </template>
 
 <script>
 export default {
-
+props:{
+  count:Number
+}
 }
 </script>
 

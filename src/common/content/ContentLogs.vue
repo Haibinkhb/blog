@@ -23,22 +23,22 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-@import "~styles/mixins.styl"
+@import "~styles/variable.styl"
 .content-logs
   display flex
   flex-direction column
   justify-content space-between
   .log-title
     cursor: pointer
-    color #2A579A
+    color $themeColor
     font-size .40rem
     margin-bottom .4rem
   .log-desc
     font-size .34rem
-    line-height .44rem
+    line-height .48rem
     overflow hidden
     text-overflow ellipsis
     display -webkit-box
-    -webkit-line-clamp 2
+    -webkit-line-clamp 3
     -webkit-box-orient vertical
 </style>
