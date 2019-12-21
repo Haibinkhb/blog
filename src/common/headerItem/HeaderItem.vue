@@ -3,7 +3,7 @@
     <router-link
       :to="'/' + nav.name"
       tag="div"
-      @click.native="togglePanel($event,nav)"
+      @click.native="togglePanel($event, nav)"
       :ref="nav.name"
       class="router-link"
     >
@@ -48,7 +48,7 @@ export default {
         let isCategories = this.$refs.Categories.$el.contains(event.target);
         this.selfShowCategories && isCategories ? this.hide() : this.show();
      }else{
-       return false
+       return
      } 
     },
     show() {
@@ -67,9 +67,7 @@ export default {
       }
     }
   },
-  beforeDestroy() {
-    this.hide();
-  },
+ 
   watch: {
     selfShowCategories() {
       if (this.selfShowCategories) {
@@ -91,10 +89,10 @@ export default {
     cursor: pointer
     font-size .36rem
     color rgba(255, 255, 255, 0.7)
-    &:hover
-      color #fff
     .router-link
       padding 0 .3rem
+      &:hover
+        color #fff !important
       @media (max-width : 980px)
         padding 0 !important
       .item-desc

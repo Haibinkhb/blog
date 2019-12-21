@@ -2,18 +2,38 @@
   <div class="content-right">
     <router-link class="info-container" tag="div" to="/about">
       <div class="bg"></div>
-       <div class="info-photo">
-          <img src="~assets/logo.jpg" alt />
-          <span class="logo">shiro</span>
-          <span class="self-desc">前端小白</span>
-       </div>
+      <div class="info-photo">
+        <img src="~assets/logo.jpg" alt />
+        <span class="logo">shiro</span>
+        <span class="self-desc">前端小白</span>
+      </div>
       <div class="about">About</div>
     </router-link>
+    <div class="card-list">
+      <common-card
+        v-for="card in cardList"
+        :key="card.id"
+        :card="card"
+      ></common-card>
+    </div>
   </div>
 </template>
 
 <script>
-export default {};
+import CommonCard from "common/CommonCard.vue";
+export default {
+  props: {
+    cardList:Array
+  },
+  data() {
+    return {
+     
+    };
+  },
+  components: {
+    CommonCard
+  }
+};
 </script>
 
 <style lang="stylus" scoped>
@@ -28,13 +48,14 @@ export default {};
     border-radius .1rem
     margin-top .4rem
     .bg
+      box-sizing border-box
       width 100%
       height 6rem
       background-image url("~assets/logo.jpg")
       background-repeat no-repeat
       background-position center
-      background-size percentage(1.5%)
-      filter blur(.13rem)
+      background-size percentage(1.3%)
+      filter blur(.25rem)
     .info-photo
       width 100%
       height 6rem
@@ -54,7 +75,6 @@ export default {};
         font-size .66rem
         color rgba(0,0,0,.8)
         margin-top .2rem
-        
       .self-desc
         margin-top .2rem
         color rgba(0,0,0,.5)
@@ -66,4 +86,9 @@ export default {};
       background-color #28a745
       color #fff
       cursor pointer
+      &:hover
+        background-color #218838
+  .card-list
+    display flex
+    flex-direction column
 </style>

@@ -1,6 +1,7 @@
 {
     "ret": true,
-    "allTags": ["JavaScript","Vue","ES6","webpack","原理","常用功能","性能","总结"],
+    "allTags": ["JavaScript","webpack","Vue","ES6","原理","常用功能","性能","总结"],
+    "allCategories":["JavaScript","Vue","ES6"],
     "data":[
         {
             "_id": "001",

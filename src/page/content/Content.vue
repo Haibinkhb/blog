@@ -3,7 +3,7 @@
     <div class="content-logs">
       <content-left v-if="isRoot" :blogs="blogs"></content-left>
       <router-view v-else></router-view>
-      <content-right ></content-right>
+      <content-right :cardList="cardList"></content-right>
     </div>
   </div>
 </template>
@@ -15,7 +15,29 @@ export default {
   name: "Content",
   data(){
     return{
-      blogs:[]
+      blogs:[],
+      cardList: [
+        {
+          id: 1,
+          name: "link",
+          header: "More Links",
+          content: [
+            { webSite: "github", userName: "a888888bbh", iconClass: "git" }
+          ]
+        },
+        {
+          id: 2,
+          name: "tags",
+          header: "All Tags",
+          content: []
+        },
+        {
+          id: 3,
+          name: "categories",
+          header: "All Categories",
+          content: []
+        }
+      ]
     }
   },
     mounted() {
@@ -35,6 +57,8 @@ export default {
       res = res.data;
       if(res.ret){
         this.blogs = res.data
+        this.cardList[1].content = res.allTags
+        this.cardList[2].content = res.allCategories
       }
     }
   },

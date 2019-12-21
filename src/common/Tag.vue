@@ -23,7 +23,8 @@ export default {
     padding .1rem .15rem
     color #fff
     font-size .32rem
-    margin-right .4rem
+    margin-right .2rem
+    margin-top .2rem
     &:hover
       background-color #3e6db5
 </style>

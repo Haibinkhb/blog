@@ -8,7 +8,7 @@
       <div class="article">
         <content-logs :log="log"></content-logs>
         <div class="tag-list">
-          <content-tag v-for="(tag, index) in log.tags" :key="index" :tag="tag"></content-tag>
+          <tag v-for="(tag, index) in log.tags" :key="index" :tag="tag"></tag>
         </div>
       </div>
     </div>
@@ -19,7 +19,7 @@
 import ContentTitle from "./ContentTitle"
 import ContentLogs from "common/content/ContentLogs.vue";
 import ArticleDate from "common/content/ArticleDate.vue";
-import ContentTag from "common/content/ContentTag";
+import Tag from "common/Tag";
 export default {
   props: {
     blogs: Array
@@ -27,7 +27,7 @@ export default {
   components: {
     ContentLogs,
     ArticleDate,
-    ContentTag,
+    Tag,
     ContentTitle
   }
 };
@@ -48,5 +48,5 @@ export default {
       .tag-list
         display flex
         flex-direction row
-        margin-top .4rem
+        margin-top .2rem
 </style>
