@@ -49,6 +49,7 @@ export default {
         this.selfShowCategories && isCategories ? this.hide() : this.show();
      }else{
        return
+      //  this.$refs[nav.name].$el.style.color = "#fff"
      } 
     },
     show() {

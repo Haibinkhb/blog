@@ -80,6 +80,7 @@ export default {
         display flex
         align-items center
         justify-content space-between
+        height .86rem
         input
           background-color rgba(255, 255, 255, 0)
           color: #fff
@@ -89,6 +90,7 @@ export default {
           padding-left .2rem
           font-size .38rem
         .search-icon
+          height 100%
           font-size .40rem
           color #fff
           padding 0 .2rem

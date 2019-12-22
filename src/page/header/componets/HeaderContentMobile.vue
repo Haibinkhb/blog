@@ -90,6 +90,7 @@ export default {
         padding-left .2rem
         font-size .38rem
       .search-icon-xs
+        height 100%
         font-size .40rem
         color #fff
         padding 0 .2rem
