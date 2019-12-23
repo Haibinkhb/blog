@@ -1,13 +1,18 @@
 <template>
-  <router-link to="/" class="tag">
+  <span @click="changeRoute"  class="tag">
     {{ tag }}
-  </router-link>
+  </span>
 </template>
 
 <script>
 export default {
   props: {
     tag: String
+  },
+  methods:{
+     changeRoute() {
+      this.$router.push({ path: `/Tags/list/${this.tag}` });
+    }
   }
 };
 </script>

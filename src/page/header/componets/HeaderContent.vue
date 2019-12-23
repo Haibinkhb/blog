@@ -1,8 +1,6 @@
 <template>
   <div class="content-container">
-    <div class="content-list">
-      <header-item class="item-list" :showCategories="showCategories" :nav="nav" v-for="nav in navList" :key="nav._id"></header-item>
-    </div>
+    <header-item :showCategories="showCategories" :navList="navList" ></header-item>
     <div class="header-input">
       <input @focus="handleInputFocus" @blur="handleInputBlur"  type="text" v-model="keyWord" />
       <div class="search-icon">
@@ -68,9 +66,6 @@ export default {
       text-align center
       @media (max-width : 980px)
         display none !important
-      .content-list
-        display flex
-        text-align center
       .header-input
         margin .15rem 0
         width 26%

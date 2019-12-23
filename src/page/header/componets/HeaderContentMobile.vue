@@ -1,6 +1,6 @@
 <template>
   <div class="content-container-xs">
-    <header-item :showCategories="showCategories" :nav="nav" v-for="nav in navList" :key="nav._id"></header-item>
+    <header-item :showCategories="showCategories" :navList="navList"></header-item>
     <div class="header-input-xs">
       <input
         @focus="handleInputFocus"

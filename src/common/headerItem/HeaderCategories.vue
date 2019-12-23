@@ -1,17 +1,42 @@
 <template>
   <div class="categoriges">
-     <ul>
-         <li>JavaScript</li>
-         <li>ES6</li>
-         <li>Vue</li>
-     </ul>
+    <ul>
+      <li
+        @click="changeRoute(categorgy)"
+        v-for="(categorgy, index) in allCategories"
+        :key="index"
+      >
+        {{ categorgy }}
+      </li>
+    </ul>
   </div>
 </template>
 
 <script>
 export default {
-
-}
+  data() {
+    return {
+      allCategories: ""
+    };
+  },
+  mounted() {
+    this.getBlogJson();
+  },
+  methods: {
+    changeRoute(path) {
+      this.$router.push({ path: `/Categories/${path}` });
+    },
+    getBlogJson() {
+      this.axios.get("blog.json").then(this.getBlogJsonSucc);
+    },
+    getBlogJsonSucc(res) {
+      res = res.data;
+      if (res.ret) {
+        this.allCategories = res.allCategories;
+      }
+    }
+  }
+};
 </script>
 
 <style lang="stylus" scoped>
@@ -27,7 +52,7 @@ export default {
     ul
         display flex
         flex-direction column
-        text-align left 
+        text-align left
         font-size $fontSize
         li
             font-size .36rem
