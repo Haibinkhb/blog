@@ -1,15 +1,25 @@
 <template>
-  <div>
-    i am about
+  <div class="archive">
+    <Title :title="title"></Title>
   </div>
 </template>
 
 <script>
+import Title from "common/Title.vue";
 export default {
-  components: {},
-  beforeRouteLeave (to, from , next) {
-    this.$emit('name',to.name)
-    next()
-}
+  data(){
+    return {
+      title:'About shiro kuang'
+    }
+  },
+  components: {
+    Title
+  },
+  beforeRouteLeave(to, from, next) {
+    this.$emit("name", to.name);
+    next();
+  }
 };
 </script>
+
+<style lang="stylus" scoped></style>

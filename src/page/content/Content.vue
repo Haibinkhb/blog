@@ -2,7 +2,9 @@
   <div class="content">
     <div class="content-logs">
       <content-left v-if="isRoot" :blogs="blogs"></content-left>
-      <router-view v-else></router-view>
+      <div v-else class="content-view">
+        <router-view></router-view>
+      </div>
       <content-right :cardList="cardList"></content-right>
     </div>
   </div>
@@ -81,4 +83,8 @@ export default {
   .content-logs
     display flex
     justify-content space-between
+    .content-view
+      width 78%
+      @media (max-width : 980px)
+        width 100% !important
 </style>

@@ -1,10 +1,12 @@
 <template>
   <div>
+    <Title :title="title"></Title>
     <article-list :blogs="filterArr"></article-list>
   </div>
 </template>
 
 <script>
+import Title from "./Title.vue"
 import ArticleList from "./content/ArticleList.vue";
 export default {
   mounted() {
@@ -28,6 +30,10 @@ export default {
         });
       }
       return filterArr
+    },
+    title(){
+      let routePath = this.$route.path.split('/')
+      return routePath[routePath.length-1]
     }
   },
   methods: {
@@ -42,7 +48,8 @@ export default {
     }
   },
   components: {
-    ArticleList
+    ArticleList,
+    Title
   }
 };
 </script>

@@ -49,8 +49,8 @@ export default {
             display flex
             flex-direction column
             margin-left .5rem
-        @media (max-width : 720px)
-            margin-left 0 !important
+            @media (max-width : 720px)
+                margin-left 0 !important
         .tag-list
             display flex
             flex-direction row

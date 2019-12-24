@@ -68,9 +68,9 @@ export default {
   color #24292e
   width 100%
   font-size .44rem
-  @media (max-width : 980px)
+  @media (max-width : 1420px)
     width 100% !important
-    font-size .32rem !important
+    font-size .36rem !important
 .markdown-body
   margin 0
 </style>
