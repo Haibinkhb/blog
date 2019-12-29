@@ -1,11 +1,13 @@
 <template>
   <div class="tags">
     <Title :title="title"></Title>
+    <tag-list></tag-list>
   </div>
 </template>
 
 <script>
 import Title from "common/Title.vue";
+import TagList from './componets/TagList'
 export default {
   computed:{
     title(){
@@ -14,7 +16,8 @@ export default {
     }
   },
   components: {
-    Title
+    Title,
+    TagList
   }
 };
 </script>

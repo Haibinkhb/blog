@@ -1,23 +1,13 @@
 <template>
   <div class="content-container-xs">
     <header-item :showCategories="showCategories" :navList="navList"></header-item>
-    <div class="header-input-xs">
-      <input
-        @focus="handleInputFocus"
-        @blur="handleInputBlur"
-        type="text"
-        v-model="keyWord"
-      />
-      <div class="search-icon-xs">
-        <icon-svg icon-class="search"></icon-svg>
-      </div>
-    </div>
+    <header-search></header-search>
   </div>
 </template>
 
 <script>
-import IconSvg from "common/icon/IconSvg.vue";
 import HeaderItem from "common/headerItem/HeaderItem";
+import HeaderSearch from './HeaderSearch'
 export default {
   name: "HeaderContentMobile",
   props:{
@@ -25,7 +15,6 @@ export default {
   },
   data() {
     return {
-      keyWord: "Search",
       navList: [
         {
           _id: 1,
@@ -50,17 +39,9 @@ export default {
       ]
     };
   },
-  methods: {
-    handleInputFocus() {
-      this.keyWord = ""; // 清空占位字符
-    },
-    handleInputBlur() {
-      this.keyWord = "Search"; // 还原占位符...（属实憨憨操作）
-    }
-  },
   components: {
-    IconSvg,
-    HeaderItem
+    HeaderItem,
+    HeaderSearch
   }
 };
 </script>
@@ -71,27 +52,4 @@ export default {
     display flex
     flex-direction column
     margin 0 auto
-    .header-input-xs
-      margin-bottom .2rem
-      width 100%
-      height .86rem
-      background-color rgba(255, 255, 255, 0.2)
-      border-radius .1rem
-      box-sizing border-box
-      display flex
-      align-items center
-      justify-content space-between
-      input
-        background-color rgba(255, 255, 255, 0)
-        color: #fff
-        height 100%
-        width 90%
-        box-sizing border-box
-        padding-left .2rem
-        font-size .38rem
-      .search-icon-xs
-        height 100%
-        font-size .40rem
-        color #fff
-        padding 0 .2rem
 </style>

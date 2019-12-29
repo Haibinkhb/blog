@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import Title from "./Title.vue"
+import Title from "./Title.vue";
 import ArticleList from "./content/ArticleList.vue";
 export default {
   mounted() {
@@ -19,21 +19,33 @@ export default {
   },
   computed: {
     filterArr() {
-      let filterArr=[]
+      let filterArr = [];
       if (this.$route.path.indexOf("Tags") > -1) {
         filterArr = this.blogs.filter(item => {
           return item.tags.indexOf(this.$route.params.id) > -1;
         });
-      }else if(this.$route.path.indexOf("Categories") > -1){
+      } else if (this.$route.path.indexOf("Categories") > -1) {
         filterArr = this.blogs.filter(item => {
           return item.categories.indexOf(this.$route.params.id) > -1;
         });
+      } else if (this.$route.path.indexOf("Search") > -1) {
+        filterArr = this.blogs.filter(item => {
+          return (
+            item.title
+              .toLowerCase()
+              .indexOf(this.$route.params.id.toLowerCase()) > -1
+          );
+        });
       }
-      return filterArr
+      return filterArr;
     },
-    title(){
-      let routePath = this.$route.path.split('/')
-      return routePath[routePath.length-1]
+    title() {
+      if (this.$route.path.indexOf("search")) {
+        return "Search Result";
+      } else {
+        let routePath = this.$route.path.split("/");
+        return routePath[routePath.length - 1];
+      }
     }
   },
   methods: {

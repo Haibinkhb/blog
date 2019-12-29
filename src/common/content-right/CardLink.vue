@@ -1,12 +1,12 @@
 <template>
-  <router-link to="/" tag="div" class="links border">
+  <a :href="link.url" tag="div" class="links border">
       <span>
           <icon-svg :icon-class="link.iconClass"></icon-svg>
       </span> 
       <span>{{link.webSite}}</span>
       <span>-</span>
       <span>{{link.userName}}</span>
-  </router-link>
+  </a>
 </template>
 
 <script>
@@ -31,6 +31,7 @@ components:{
     box-sizing border-box
     flex-wrap wrap
     cursor pointer
+    color #555
     &:hover
         background-color rgba(0,0,0,.03)
     span

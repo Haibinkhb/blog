@@ -15,16 +15,16 @@ import ContentLeft from "./components/ContentLeft";
 import ContentRight from "./components/ContentRight";
 export default {
   name: "Content",
-  data(){
-    return{
-      blogs:[],
+  data() {
+    return {
+      blogs: [],
       cardList: [
         {
           id: 1,
           name: "link",
           header: "More Links",
           content: [
-            { webSite: "github", userName: "Haibinkhb", iconClass: "git" }
+            { url:"https://github.com/Haibinkhb", webSite: "github", userName: "Haibinkhb", iconClass: "git" }
           ]
         },
         {
@@ -40,27 +40,26 @@ export default {
           content: []
         }
       ]
-    }
+    };
   },
-    mounted() {
+  mounted() {
     this.getBlogJson();
   },
-  computed:{
-    isRoot(){
-      return this.$route.fullPath === '/'
+  computed: {
+    isRoot() {
+      return this.$route.fullPath === "/";
     }
   },
   methods: {
     getBlogJson() {
-      this.axios.get('blog.json')
-        .then(this.getBlogJsonSucc);
+      this.axios.get("blog.json").then(this.getBlogJsonSucc);
     },
     getBlogJsonSucc(res) {
       res = res.data;
-      if(res.ret){
-        this.blogs = res.data
-        this.cardList[1].content = res.allTags
-        this.cardList[2].content = res.allCategories
+      if (res.ret) {
+        this.blogs = res.data;
+        this.cardList[1].content = res.allTags;
+        this.cardList[2].content = res.allCategories;
       }
     }
   },
@@ -72,7 +71,7 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-.content 
+.content
   background-color #fff
   width 60%
   margin 1.2rem auto

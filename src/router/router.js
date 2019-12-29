@@ -26,6 +26,10 @@ export default new VueRouter({
             component: About
         },
         {
+            path: '/Search/:id',
+            component: FilterArticle
+        },
+        {
             path:'/Categories/:id',
             component: FilterArticle
         },
