@@ -7,6 +7,7 @@
         placeholder="Search"
         @focus="handleInputFocus"
         @blur="handleInputBlur"
+        @keyup.enter="handleSearchClick"
       />
       <div class="search-icon" @click="handleSearchClick">
         <icon-svg icon-class="search"></icon-svg>
@@ -17,7 +18,7 @@
         class="search-content-item"
         v-for="(item, index) in searchList"
         :key="index"
-        @click="changeRouter(item)"
+        @mousedown="changeRouter(item)"
       >
         {{ item }}
       </div>
@@ -57,10 +58,10 @@ export default {
       this.showSearchContent = true;
     },
     handleInputBlur() {
-      this.showSearchContent = false;
+        this.showSearchContent = false;
     },
     changeRouter(path){
-      this.$route.push({ path: `/Search/${path}`});
+      this.$router.push({ path: `/Search/${path}`});
     }
   },
   components: {
@@ -102,6 +103,10 @@ export default {
         font-size .40rem
         color #fff
         padding 0 .2rem
+        border-radius .1rem
+        cursor pointer
+        &:hover
+          background-color rgba(0,0,0,.1)
     .search-content
       color #555
       z-index 2

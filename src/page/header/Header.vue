@@ -28,6 +28,7 @@ export default {
       showCategories: false
     };
   },
+  
   mounted() {
     this.clientWidth = `${document.documentElement.clientWidth}px`;
     // 监听 window 的 resize 事件
@@ -58,6 +59,13 @@ export default {
     },
     handleMenuClick() {
       this.showContainer = !this.showContainer;
+    }
+  },
+  watch:{
+    $route(to, from){
+      if(to.fullPath !== from.fullPath){
+        this.showContainer = false
+      }
     }
   },
   components: {

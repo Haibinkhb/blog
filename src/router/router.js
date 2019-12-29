@@ -5,10 +5,7 @@ import Tags from 'page/tags/Tags.vue'
 import Archive from 'page/archive/Archive.vue'
 import FilterArticle from 'common/FilterArticle'
 import Log from 'common/content/Log.vue'
-const routerPush = VueRouter.prototype.push
-VueRouter.prototype.push = function push(location) {
-    return routerPush.call(this, location).catch(error => error)
-}
+
 Vue.use(VueRouter)
 
 export default new VueRouter({
