@@ -14,6 +14,6 @@ props:{
 
 <style lang="stylus" scoped>
 .title
-    padding .4rem
+    padding .4rem 0
     font-size .54rem
 </style>

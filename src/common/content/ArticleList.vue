@@ -12,6 +12,7 @@
       </div>
     </div>
   </div>
+  
 </template>
 
 <script>
@@ -55,4 +56,7 @@ export default {
             display flex
             flex-direction row
             margin-top .2rem
+.no-result
+  width 100%
+  height 100vh
 </style>

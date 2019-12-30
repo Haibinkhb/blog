@@ -51,7 +51,7 @@ export default {
       event.stopPropagation
         ? event.stopPropagation()
         : (event.cancelBubble = true);
-     if(nav.name === "Categories"){
+     if(nav.name === "Categories" && this.$refs.Categories.length !== 0){
         this.currentIndex = 0
         let isCategories = this.$refs.Categories[0].$el.contains(event.target);
         this.selfShowCategories && isCategories ? this.hide() : this.show();
@@ -69,7 +69,7 @@ export default {
     },
     hidePanel(e) {
       // 判断点击的元素是否是弹出层的后代元素
-      if (this.$refs.Categories[0] && !this.$refs.Categories[0].$el.contains(e.target)) {
+      if (!this.$refs.Categories && !this.$refs.Categories[0].$el.contains(e.target)) {
         //点击除弹出层外的空白区域
         this.hide();
       }
@@ -95,7 +95,7 @@ export default {
 <style lang="stylus" scoped>
 .item-list
     display flex
-    cursor: pointer
+    cursor pointer
     font-size .36rem
     color rgba(255, 255, 255, 0.7)
     @media (max-width : 980px)

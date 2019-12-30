@@ -37,10 +37,10 @@ export default {
           );
         });
       }
-      return filterArr;
+        return filterArr
     },
     title() {
-      if (this.$route.path.indexOf("search")) {
+      if (this.$route.path.indexOf("Search") > -1) {
         return "Search Result";
       } else {
         let routePath = this.$route.path.split("/");
