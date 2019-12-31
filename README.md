@@ -1,4 +1,4 @@
-# shiro kuang blog
+# 学习笔记
 
 * [JavaScript 原型和原型链](/public/markdown/prototype.md)
 * [JavaScript 作用域](/public/markdown/scope.md)

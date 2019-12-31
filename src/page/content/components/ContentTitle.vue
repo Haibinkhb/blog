@@ -18,6 +18,7 @@ props:{
     display flex
     padding .4rem 0
     align-items center
+    box-sizing border-box
     h3
       font-size .54rem
       margin-right .2rem

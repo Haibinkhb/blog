@@ -40,7 +40,7 @@ export default {
         return filterArr
     },
     title() {
-      if (this.$route.path.indexOf("search") > -1) {
+      if (this.$route.path.indexOf("Search") > -1) {
         return "Search Result";
       } else {
         let routePath = this.$route.path.split("/");

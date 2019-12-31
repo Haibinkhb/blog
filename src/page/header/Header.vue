@@ -63,9 +63,13 @@ export default {
   },
   watch:{
     $route(to, from){
-      if(to.fullPath !== from.fullPath){
+     try{
+        if(to.fullPath !== from.fullPath){
         this.showContainer = false
       }
+     }catch(error){
+       console.log(error)
+     }
     }
   },
   components: {

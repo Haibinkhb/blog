@@ -42,8 +42,8 @@ export default {
     }
   },
   watch: {
-    searchList(newvalue) {
-      localStorage.searchList = newvalue;
+    searchList(newValue) {
+      localStorage.searchList = newValue;
     }
   },
   methods: {

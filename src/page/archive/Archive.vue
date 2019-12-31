@@ -1,11 +1,13 @@
 <template>
   <div class="archive">
     <Title :title="title"></Title>
+    <archive-time-line></archive-time-line>
   </div>
 </template>
 
 <script>
 import Title from "common/Title.vue";
+import ArchiveTimeLine from "./compnents/ArchiveTimeLine.vue"
 export default {
   computed:{
     title(){
@@ -14,7 +16,8 @@ export default {
     }
   },
   components: {
-    Title
+    Title,
+    ArchiveTimeLine
   }
 };
 </script>
