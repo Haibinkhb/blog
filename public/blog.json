@@ -1,6 +1,6 @@
 {
     "ret": true,
-    "allTags": ["webpack","Vue","ES6","principle","features","performance","summary"],
+    "allTags": ["webpack","Vue","Promise","principle","features","performance","summary"],
     "allCategories":["JavaScript","Vue","webpack"],
     "data":[
         {
@@ -127,5 +127,20 @@
             "categories": [
                 "JavaScript"
             ]
-        }]
+        },{
+            "_id": "009",
+            "id": "promise",
+            "title": "Promise的基本使用",
+            "tags": [
+                "Promise"
+            ],
+            "desc": "Promise 是异步编程的一种解决方案。从语法上说，Promise 是一个对象，从它可以获取异步操作的结果。从功能上来说它promise对象封装一个异步操作，并且可以获取其结果。",
+            "filename": "promise.md",
+            "wordcount": "1258",
+            "date": "2020-1-1",
+            "categories": [
+                "ES6"
+            ]
+        }
+    ]
 }
