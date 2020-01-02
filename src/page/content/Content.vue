@@ -24,7 +24,9 @@ export default {
           name: "link",
           header: "More Links",
           content: [
-            { url:"https://github.com/Haibinkhb", webSite: "github", userName: "Haibinkhb", iconClass: "git" }
+            { url:"https://github.com/Haibinkhb", webSite: "GitHub", userName: "Haibinkhb", iconClass: "git" },
+            { url:"https://web.wechat.com/", webSite: "WeChat", userName: "a888888hbb", iconClass: "we-chat-colour" },
+            { url:"https://im.qq.com/", webSite: "QQ", userName: "305688103", iconClass: "QQ" }
           ]
         },
         {

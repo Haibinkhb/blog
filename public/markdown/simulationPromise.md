@@ -1,4 +1,4 @@
-#### 模拟实现 Promise
+#### Promise 的简单模拟实现
 
 Promise 接收一个执行器（executor）函数，Promise 构造函数执行时立即调用该函数,该函数接受两个参数，分别是 resolve 函数和 reject 函数
 
@@ -52,7 +52,12 @@ function Promise(executor){
             })
         }
     }
-    executor(resolve, reject)
+    try{
+        // 执行 executor （执行器函数）
+        executor(resolve, reject)
+    }catch(error){ // 可能会抛出异常，需要捕获并 reject 异常
+        reject(error)
+    }
 }
 ```
 
@@ -132,7 +137,7 @@ p1.then(
 )
 ```
 
-可是 Promise 是支持链式调用的,也就是说 then 方法会返回一个新的Promise 实例，而且新返回的 Promise 实例的状态是由回调函数的结果来决定的。
+可是 Promise 是支持链式调用的,也就是说 then 方法会返回一个新的Promise 实例，而且新返回的 Promise 实例的状态是由回调函数的结果来决定的。修改一下：
 
 ```js
 Promise.prototype.then = function (onFulfilled, onRejected) {
@@ -214,7 +219,7 @@ new Promise((reslove, reject) => {
 )
 ```
 
-现在支持链式调用了,也能正确的处理返回的 Promise 的结果了，但是代码的封装性是不是太差了，而且当 Promise 是 pending 状态时，我们直接调用了回调函数，并没有返回新的 Promise 实例。另外如果 then 方法接收到的不是一个函数，会将值往下传（onFulfilled）或者抛出错误（onRejecte）
+现在支持链式调用了,也能正确的处理返回的 Promise 的结果了，但是代码的封装性是不是太差了，而且当 Promise 是 pending 状态时，我们直接调用了回调函数，并没有返回新的 Promise 实例。另外如果 then 方法接收到的不是一个函数，会将值往下传（onFulfilled）或者抛出错误
 
 ```js
 // 最终版
@@ -279,3 +284,101 @@ Promise.prototype.then = function (onFulfilled, onRejected) {
 ```
 
 then方法基本实现了,再实现一些常用的api
+
+##### Promise.prototype.catch()
+
+Promise.prototype.catch方法是.then(null, rejection)或.then(undefined, rejection)的别名，用于指定发生错误时的回调函数。所以很简单就能实现
+
+```js
+Promise.prototype.catch = function (onRejected) {
+    return this.then(undefined, onRejected)
+}
+```
+
+##### Promise.resolve(value)
+
+返回一个状态由给定value决定的Promise对象。会有几种情况：
+
+1. 如果参数是 Promise 实例，那么Promise.resolve将不做任何修改、原封不动地返回这个实例。
+2. 如果参数是一个原始值，或者是一个不具有then方法的对象，则Promise.resolve方法返回一个新的 Promise 对象，状态为resolved。
+3. Promise.resolve()方法允许调用时不带参数，直接返回一个resolved状态的 Promise 对象，值为undefined。
+
+```js
+Promise.resolve = function (value) {
+    // 如果参数是MyPromise实例，直接返回这个实例
+    if(value instanceof Promise) return value
+    return new Promise(resolve => {
+        // 否则返回一个新的 Promise 对象，状态为 resolved
+        resolve(value)
+    })
+}
+```
+
+##### Promise.reject(value)
+
+Promise.reject(reason)方法也会返回一个新的 Promise 实例，该实例的状态为rejected。
+
+```js
+Promise.reject = function (value) {
+    return new Promise((resolve, reject) => reject(value))
+}
+```
+
+##### Promise.all(iterable)
+
+Promise.all()方法接受一个iterable作为参数，iterable里的元素都是 Promise 实例，如果不是，就会先调用下面讲到的Promise.resolve方法，将参数转为 Promise 实例。all方法会返回一个 Promise 实例，它的状态由参数的结果决定：
+
+1. 只有 iterable 里的元素的状态都变成fulfilled，返回的 Promise 实例的状态才会变成fulfilled
+2. 只要 iterable 里的元素之中有一个被rejected，返回的 Promise 实例的状态就变成rejected
+
+```js
+ Promise.all = function (list) {
+    let tempArr = new Array(list.length),
+        count = 0
+    return new Promise((resolve, reject) => {
+        list.forEach((item, index) => {
+            // 数组参数如果不是 Promise 实例，先调用 Promise.resolve 转换
+            Promise.resolve(item).then(
+                value => {
+                    count++
+                    tempArr[index] = value
+                    // 只有数组中所以元素的状态都变成fulfilled，返回的Promise状态才会变成fulfilled
+                    if(count === list.length){
+                        resolve(tempArr)
+                    }
+                },
+                // 只要数组里的元素之中有一个被rejected，返回的 Promise 实例的状态就变成rejected
+                reason => {
+                    reject(reason)
+                }
+            )
+        })
+    })
+}
+```
+
+##### Promise.race(iterable)
+
+Promise.all()方法接受一个iterable作为参数,Promise.race()方法的参数与Promise.all()方法一样，如果不是 Promise 实例，就会先调用下面讲到的Promise.resolve()方法，将参数转为 Promise 实例。不同的是当iterable参数里的任意一个子promise被成功或失败后，父promise马上也会用子promise的成功返回值或失败详情作为参数调用父promise绑定的相应句柄，并返回该promise对象。
+
+```js
+Promise.race = function (list) {
+    return new Promise((resolve, reject) => {
+        list.forEach(item => {
+            Promise.resolve(item).then(
+                // 只要有一个实例率先改变状态，新的 Promise 的状态就跟着改变
+                value => {
+                    resolve(value)
+                },
+                reason => {
+                    reject(reason)
+                }
+            )
+        })
+    })
+}
+```
+
+***
+
+说明：本文是本人对 Promise 的一些简单的理解，如有错误还望指出。

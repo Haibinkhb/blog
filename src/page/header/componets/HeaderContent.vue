@@ -48,7 +48,7 @@ export default {
       display flex
       justify-content space-between
       align-items center
-      padding-left .2rem
+      margin-left 1rem
       text-align center
       @media (max-width : 980px)
         display none !important

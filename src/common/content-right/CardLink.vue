@@ -24,10 +24,10 @@ components:{
 <style lang="stylus" scoped>
 .links
     display flex
-    justify-content center
+    justify-content left 
     align-items center
     width 100%
-    padding .2rem 0
+    padding .4rem
     box-sizing border-box
     flex-wrap wrap
     cursor pointer
