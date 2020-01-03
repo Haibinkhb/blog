@@ -36,6 +36,10 @@ export default {
               .indexOf(this.$route.params.id.toLowerCase()) > -1
           );
         });
+      } else if(this.$route.path.indexOf("Archive") > -1){
+        filterArr = this.blogs.filter(item =>{
+          return item.date.indexOf(this.$route.params.id) > -1;
+        })
       }
         return filterArr
     },

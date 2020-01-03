@@ -7,7 +7,7 @@
 
 <script>
 import Title from "common/Title.vue";
-import ArchiveTimeLine from "./compnents/ArchiveTimeLine.vue"
+import ArchiveTimeLine from "./components/ArchiveTimeLine.vue"
 export default {
   computed:{
     title(){

@@ -40,6 +40,14 @@ export default new VueRouter({
             component: FilterArticle
         },
         {
+            path: '/Archive/:id',
+            component: FilterArticle,
+            children:[{
+                path:':token',
+                component: FilterArticle
+            }]
+        },
+        {
             path: '/:id',
             component: Log
         }
