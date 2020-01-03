@@ -17,6 +17,7 @@ export default {
       blogs: []
     };
   },
+
   computed: {
     filterArr() {
       let filterArr = [];
@@ -36,16 +37,28 @@ export default {
               .indexOf(this.$route.params.id.toLowerCase()) > -1
           );
         });
-      } else if(this.$route.path.indexOf("Archive") > -1){
-        filterArr = this.blogs.filter(item =>{
-          return item.date.indexOf(this.$route.params.id) > -1;
-        })
+      } else if (this.$route.path.indexOf("Archive") > -1) {
+        let id = this.$route.params.id;
+        let token = this.$route.params.token ? this.$route.params.token : "";
+        filterArr = this.blogs.filter(item => {
+          if (token) {
+            return item.date.indexOf(`${id}-${token}`) > -1;
+          }
+          return item.date.indexOf(id) > -1;
+        });
       }
-        return filterArr
+      return filterArr;
     },
     title() {
       if (this.$route.path.indexOf("Search") > -1) {
         return "Search Result";
+      } else if (this.$route.path.indexOf("Archive") > -1) {
+        let id = this.$route.params.id;
+        let token = this.$route.params.token ? this.$route.params.token : "";
+        if (token) {
+          return `All potos in ${id}.${token}`;
+        }
+        return `All potos in ${id}`;
       } else {
         let routePath = this.$route.path.split("/");
         return routePath[routePath.length - 1];
