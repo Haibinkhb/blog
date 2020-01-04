@@ -1,14 +1,15 @@
 <template>
-  <div>
-    
+  <div >
       <router-link tag="div" class="link" to="/" >shiro</router-link>
-   
   </div>
 </template>
 
 <script>
 export default {
-  name:"HeaderLogo"
+  name:"HeaderLogo",
+  mounted(){
+    
+  }
 };
 </script>
 
