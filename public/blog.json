@@ -156,6 +156,22 @@
             "categories": [
                 "ES6"
             ]
+        },
+        {
+            "_id": "011",
+            "id": "mvvm",
+            "title": "简单模拟实现 Vue 2.x 双向绑定",
+            "tags": [
+                "Vue",
+                "principle"
+            ],
+            "desc": "当你把一个普通的 JavaScript 对象传入 Vue 实例作为 data 选项，Vue 将遍历此对象所有的属性，并使用 Object.defineProperty 把这些属性全部转为 getter/setter。",
+            "filename": "mvvm.md",
+            "wordcount": "1411",
+            "date": "2020-1-7",
+            "categories": [
+                "ES6"
+            ]
         }
     ]
 }
