@@ -1,10 +1,8 @@
 #### 简单模拟实现 Vue 2.x 响应式
 
-***
+当你把一个普通的 JavaScript 对象传入 Vue 实例作为 data 选项，Vue 将遍历此对象所有的属性，并使用 Object.defineProperty 把这些属性全部转为 getter/setter。
 
-> 当你把一个普通的 JavaScript 对象传入 Vue 实例作为 data 选项，Vue 将遍历此对象所有的属性，并使用 Object.defineProperty 把这些属性全部转为 getter/setter。
-
-```html
+```xhtml
 <div id="app">
     <div>{{person.name}}</div>
     <input type="text" v-modle="person.hobby">
@@ -410,7 +408,7 @@ class MyVue {
             new Observer(this.$data)
             for (let key in computed) {
                 // 通过 this.key 获取 computed 属性是，实际上是调用了 computed[key]
-                Object.defineProperty(this, key, {
+                Object.defineProperty(this.$data, key, {
                     get: () => {
                         return computed[key].call(this)
                     }
