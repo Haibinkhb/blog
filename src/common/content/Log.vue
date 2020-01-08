@@ -1,42 +1,27 @@
 <template>
   <div class="content markdown-body">
-    <component v-bind:is="componentFile"></component>
+    <keep-alive>
+      <component :is="componentFile"></component>
+    </keep-alive>
   </div>
 </template>
 
 <script>
 import "highlight.js/styles/github.css";
 import "github-markdown-css";
+
 export default {
-  created() {},
   data() {
     const componentFile = this.render;
     return {
-      blogs: [],
-      componentFile
+      componentFile,
     };
   },
-  computed: {
-    log() {
-      return this.blogs.find(item => {
-        return item.id === this.$route.params.id;
-      });
-    }
+  props: {
+    blogs:Array,
+    log:Object
   },
-  mounted() {
-    this.getBlogJson();
-  },
-
   methods: {
-    getBlogJson() {
-      this.axios.get("blog.json").then(this.getBlogJsonSucc);
-    },
-    getBlogJsonSucc(res) {
-      res = res.data
-      if(res.ret){
-        this.blogs = res.data;
-      }
-    },
     render() {
       this.componentFile = () => ({
         component: import(
@@ -57,14 +42,14 @@ export default {
   },
   watch: {
     log() {
-      this.render()
+      this.render();
     }
   }
 };
 </script>
 
 <style lang="stylus" scoped>
-.content 
+.content
   color #24292e
   width 100%
   font-size .44rem

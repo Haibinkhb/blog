@@ -4,7 +4,8 @@ import About from 'page/about/About.vue'
 import Tags from 'page/tags/Tags.vue'
 import Archive from 'page/archive/Archive.vue'
 import FilterArticle from 'common/FilterArticle'
-import Log from 'common/content/Log.vue'
+import LogContent from 'common/content/LogContent.vue'
+
 // 解决路由报 Uncaught (in promise) undefined 错误
 const routerPush = VueRouter.prototype.push
 VueRouter.prototype.push = function push(location) {
@@ -48,8 +49,8 @@ export default new VueRouter({
             }]
         },
         {
-            path: '/:id',
-            component: Log
+            path: '/Logs/:id',
+            component: LogContent
         }
     ]
 })   

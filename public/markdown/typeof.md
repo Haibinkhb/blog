@@ -1,7 +1,3 @@
-#### 类型判断
-
-***
-
 > typeof 是一元操作符，放在其单个操作数的前面，操作数可以是任意类型。返回值为表示操作数类型的一个字符串。
 
 使用 typeof 对JavaScript 共六种数据类型 Undefined、Null、Boolean、Number、String、Object 的值进行操作的时候返回的结果却不是一一对应，分别是：

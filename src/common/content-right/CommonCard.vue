@@ -16,7 +16,7 @@
       </template>
       <template v-else>
           <div class="categories" >
-              <category v-for="(category, index) in card.content" :key="index" :category="category"></category>
+              <category class="category border-top" v-for="(category, index) in card.content" :key="index" :category="category"></category>
           </div>
       </template>
     </div>
@@ -56,4 +56,12 @@ export default {
             flex-wrap wrap
             padding 0 .2rem .2rem .2rem
             position relative
+        .categories
+          font-size .40rem
+          .category
+            color #495057
+            padding .4rem
+            cursor pointer
+            &:hover
+              background-color #f8f9fa
 </style>

@@ -1,6 +1,6 @@
 <template>
   <div class="content-logs">
-      <router-link :to="'/'+log.id" class="log-title">{{log.title}}</router-link>
+      <router-link :to="'/Logs/'+log.id" class="log-title">{{log.title}}</router-link>
       <div class="log-desc">{{log.desc}}</div>
   </div>
 </template>

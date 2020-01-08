@@ -1,6 +1,5 @@
 <template>
   <div 
-    class="category border-top"
     @click="changeRoute(category)"
   >
       {{category}}
@@ -21,11 +20,5 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-.category
-    color #555
-    font-size .38rem
-    padding .4rem 0
-    cursor pointer
-    &:hover
-        background-color rgba(0,0,0,.03)
+
 </style>

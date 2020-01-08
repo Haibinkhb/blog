@@ -1,5 +1,3 @@
-#### 简单模拟实现 Vue 2.x 响应式
-
 当你把一个普通的 JavaScript 对象传入 Vue 实例作为 data 选项，Vue 将遍历此对象所有的属性，并使用 Object.defineProperty 把这些属性全部转为 getter/setter。
 
 ```xhtml

@@ -3,7 +3,9 @@
     <div class="content-logs">
       <content-left v-if="isRoot" :blogs="blogs"></content-left>
       <div v-else class="content-view">
-        <router-view></router-view>
+        <keep-alive>
+          <router-view></router-view>
+        </keep-alive>
       </div>
       <content-right :cardList="cardList"></content-right>
     </div>

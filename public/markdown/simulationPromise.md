@@ -1,5 +1,3 @@
-#### Promise 的简单模拟实现
-
 Promise 接收一个执行器（executor）函数，Promise 构造函数执行时立即调用该函数,该函数接受两个参数，分别是 resolve 函数和 reject 函数
 
 ```js
