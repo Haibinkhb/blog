@@ -1,6 +1,6 @@
 <template>
   <div class="content-right">
-    <router-link class="info-container" tag="div" to="/about">
+    <router-link class="info-container" tag="div" to="/About">
       <div class="bg"></div>
       <div class="info-photo">
         <img src="~assets/logo.jpg" alt />

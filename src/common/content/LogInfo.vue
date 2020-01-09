@@ -46,11 +46,12 @@ export default {
     justify-content space-between
     align-items center
     margin-bottom .5rem
+    flex-wrap wrap
+    padding .2rem 0
     .category-list
         display flex
         justify-content center
         align-items center
-        margin .4rem 0
         .category-item
             display flex
             justify-content center
@@ -71,6 +72,8 @@ export default {
         display flex
         justify-content center
         align-items center
+        padding .2rem 0
+        box-sizing border-box
         .tag
-            margin-top 0
+          margin 0 .2rem 0 0
 </style>

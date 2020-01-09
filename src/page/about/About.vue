@@ -1,11 +1,13 @@
 <template>
   <div class="archive">
     <Title :title="title"></Title>
+    <about-description></about-description>
   </div>
 </template>
 
 <script>
 import Title from "common/Title.vue";
+import AboutDescription from './components/AboutDescription.vue'
 export default {
   data(){
     return {
@@ -13,7 +15,8 @@ export default {
     }
   },
   components: {
-    Title
+    Title,
+    AboutDescription
   },
   beforeRouteLeave(to, from, next) {
     this.$emit("name", to.name);
@@ -22,4 +25,7 @@ export default {
 };
 </script>
 
-<style lang="stylus" scoped></style>
+<style lang="stylus" scoped>
+.archive
+  width 100%
+</style>
