@@ -1,6 +1,6 @@
 #### 创建对象的多种方式及优缺点
 
-1. 工厂模式
+* 工厂模式
 
 ```js
 function creatPerson(name){
@@ -15,7 +15,7 @@ function creatPerson(name){
 
 缺点：对象无法识别，因为所有的实例都指向一个原型
 
-2. 构造函数模式
+* 构造函数模式
 
 ```js
 function Preson(name){
@@ -48,7 +48,7 @@ var person1 = new Person();
 
 缺点：没有封装
 
-3. 原型模式
+* 原型模式
 
 ```js
 function Person(){}
@@ -98,7 +98,7 @@ var person1 = new Person();
 
 缺点：原型模式该有的缺点还是有
 
-4. 组合模式
+* 组合模式
 
 ```js
 function Person(name){
@@ -167,7 +167,7 @@ function Person(name) {
 }
 ```
 
-5. 稳妥构造函数模式
+* 稳妥构造函数模式
 
 ```js
 function person(name){
@@ -236,7 +236,7 @@ child2.getColors(); // ['red','yellow','blue']
 
 * 在创建Child实例时不能像Parent传递参数
 
-2. 借用构造函数
+* 借用构造函数
 
 ```js
 function Parent(name){
@@ -263,7 +263,7 @@ console.logh(child2.colors, child.name); //['red','yellow'] , wyf
 
 方法都在构造函数中定义，每次创建实例都会创建一遍方法。
 
-3. 组合继承
+* 组合继承
 
 ```js
 function Parent(name){
@@ -293,7 +293,7 @@ console.log(child2.colors); // ['red','yellow']
 
 优点：融合原型链继承和构造函数的优点，是 JavaScript 中最常用的继承模式。
 
-4. 原型式继承
+* 原型式继承
 
 ```js
 function createObj(o){
@@ -325,7 +325,7 @@ person1.colors.push('blue');
 console.log(person2.colors); // ['red', 'yellow','blue']
 ```
 
-5. 寄生式继承
+* 寄生式继承
 
 ```js
 function createObj (o) {
@@ -339,7 +339,7 @@ function createObj (o) {
 
 缺点：跟借用构造函数模式一样，每次创建对象都会创建一遍方法。
 
-6. 寄生组合式继承
+1. 寄生组合式继承
 
 组合继承最大的缺点是会调用两次父构造函数。
 

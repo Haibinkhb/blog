@@ -1,4 +1,4 @@
-ECMAScript 规范给所有函数都定义了 call 和 apply 两个方法,他们的作用都是显示的绑定 this 。它们的第一个参数都是一个对象，它们会把 this 指向这个对象。不同的是 apply 的第二个参数是一个作为函数参数的数组。
+> ECMAScript 规范给所有函数都定义了 call 和 apply 两个方法,他们的作用都是显示的绑定 this 。它们的第一个参数都是一个对象，它们会把 this 指向这个对象。不同的是 apply 的第二个参数是一个作为函数参数的数组。
 
 ```js
 var obj = {
@@ -225,6 +225,7 @@ Function.prototype.myApply = function(obj, arr){
         }
         result = eval('obj.fn(' + args + ')')
     }
+    delete obj.fn;
     return result
 }
 ```
