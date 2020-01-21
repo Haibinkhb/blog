@@ -158,7 +158,8 @@ CompilUtil = {
 }
 ```
 
-此时模板就能正确的显示我们想要的效果了，不过要想实现响应式，还远远不够。开头就引用了 Vue 官方文档的描述 Vue 实例会遍历 data 对象，并使用 Object.defineProperty 把这些属性全部转为 getter/setter。
+此时模板就能正确的显示我们想要的效果了，不过要想实现响应式，还远远不够。开头就引用了 Vue 官方文档的描述 Vue 实例会遍历 data 对象，并使用 Object.defineProperty 把这些属性全部转为 getter/setter。因此我们需要一个
+监听者 Observer
 
 ```js
 class MyVue {
