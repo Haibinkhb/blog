@@ -8,10 +8,13 @@
         @menuclick="handleMenuClick"
       ></header-menu>
     </div>
-    <header-content-mobile
-      :showCategories="showCategories"
-      v-if="showContainer"
-    ></header-content-mobile>
+    <transition name="fade">
+      <header-content-mobile
+        :showCategories="showCategories"
+        v-if="showContainer"
+        
+      ></header-content-mobile>
+    </transition>
   </div>
 </template>
 
@@ -91,6 +94,16 @@ export default {
   position fixed
   top 0
   left 0
+  .fade-enter-active
+    transition max-height .5s cubic-bezier(0.88, 0.64, 0.24, 0.04),opacity .3s ease-in
+  .fade-leave-active
+    transition max-height .5s cubic-bezier(0.04, 0.08, 0.32, 0.96),opacity .3s ease-in
+  .fade-enter, .fade-leave-to
+    max-height 0
+    opacity 0
+  .fade-enter-to, 
+  .fade-leave
+    max-height 100vh
   .header-content
     width 60%
     display flex
@@ -104,4 +117,5 @@ export default {
     .header-content
       width 88% !important
       justify-content space-between !important
+ 
 </style>

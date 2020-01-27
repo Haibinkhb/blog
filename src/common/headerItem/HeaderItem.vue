@@ -15,9 +15,11 @@
         class="categories-icon"
         icon-class="sort-down"
       ></icon-svg>
-      <header-categories
-        v-if="nav.secMenu && selfShowCategories"
-      ></header-categories>
+      <transition name="fade">
+        <header-categories
+          v-if="nav.secMenu && selfShowCategories"
+        ></header-categories>
+      </transition>
     </router-link>
   </div>
 </template>
@@ -113,4 +115,14 @@ export default {
           padding-left .2rem
     .active
       color #fff !important
+    .fade-enter-active
+      transition max-height .4s cubic-bezier(0.88, 0.64, 0.24, 0.04),opacity .3s ease-in
+    .fade-leave-active
+      transition max-height .4s cubic-bezier(0.04, 0.08, 0.12, 0.96),opacity .3s ease-in
+    .fade-enter, .fade-leave-to
+      max-height 0
+      opacity 0
+    .fade-enter-to, 
+    .fade-leave
+      max-height 100vh
 </style>

@@ -49,6 +49,7 @@ export default {
 <style lang="stylus" scoped>
 .content-container-xs
     width 88%
+    // height 100vh
     display flex
     flex-direction column
     margin 0 auto
